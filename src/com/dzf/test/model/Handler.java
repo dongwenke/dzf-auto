@@ -3,13 +3,7 @@ package com.dzf.test.model;
 import java.lang.reflect.Method;
 import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -173,10 +167,11 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	@Override
 	public void input(String elementName, String string) throws MyException {
 		try {
-			WebElement element = getWebElement(elementName);
-
-			element.clear();
-			element.sendKeys(string);
+////			WebElement element = getWebElement(elementName);
+			input(getWebElement(elementName),string);
+			
+//			element.clear();
+//			element.sendKeys(string);
 			logger.info("【" + elementName + "】 已输入：" + string);
 		} catch (WebDriverException e) {
 			logger.error("【" + elementName + "】 输入失败！");
@@ -221,24 +216,24 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	@Override
 	public void click(String elementName) throws MyException {
 		try {
-			WebElement element = getWebElement(elementName);
+//			WebElement element = getWebElement(elementName);
 
-			wait.until(ExpectedConditions.elementToBeClickable(element));
+//			wait.until(ExpectedConditions.elementToBeClickable(element));
+//
+//			// highlightElementUtil.highlightElement(element);
+//
+//			Thread.sleep(1000);
+//
+//			element.click();
 
-			// highlightElementUtil.highlightElement(element);
-
-			Thread.sleep(1000);
-
-			element.click();
-
+			click(getWebElement(elementName));
+			
 			logger.info("点击【" + elementName + "】");
 		} catch (WebDriverException e) {
 			logger.error("【" + elementName + "】点击失败！");
 			throw new MyException("【" + elementName + "】 点击失败！", e);
 
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		} 
 	}
 
 	@Override
@@ -316,11 +311,11 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	}
 
 	@Override
-	public boolean isDisplayed(String elementName) {
+	public boolean isDisplayed(String elementName) throws MyException {
 		boolean result = false;
 
 		try {
-			result = driver.findElement(by(getElement(elementName))).isDisplayed();
+			result = getWebElement(elementName).isDisplayed();
 
 		} catch (WebDriverException e) {
 			// throw new MyException("元素未找到：" + elementName, e);
@@ -343,11 +338,11 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	}
 
 	@Override
-	public boolean isDisplayed(By locator) {
+	public boolean isDisplayed(By locator) throws MyException {
 		boolean result = false;
 
 		try {
-			result = wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).isDisplayed();
+			result  = getWebElement(locator).isDisplayed();
 		} catch (WebDriverException e) {
 			// throw new MyException("元素未找到：" + locator, e);
 		}
