@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="scenery2"
+           tests="21"
+           failures="1"
+           errors="0"
+           skipped="0"
+           time="513.693">
+  <properties />
+            <testcase name="test利润表" time="10.498" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【查询按钮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【查询按钮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:226)
+  com.dzf.test.page.accounting.财务账表.利润表Page.search(利润表Page.java:31)
+  com.dzf.test.testscenery.TestScenery2.test利润表(TestScenery2.java:457)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.StaleElementReferenceException: Element belongs to a different frame than the current one - switch to its containing frame to use it
+Command duration or timeout: 6.13 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 7cd634e2-ddfc-4e4f-8028-ad5f1b56842a
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+  org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+  org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:268)
+  org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:79)
+  com.dzf.test.model.Handler.click(Handler.java:221)
+  com.dzf.test.page.accounting.财务账表.利润表Page.search(利润表Page.java:31)
+  com.dzf.test.testscenery.TestScenery2.test利润表(TestScenery2.java:457)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Element belongs to a different frame than the current one - switch to its containing frame to use it
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: driver.version: unknown
+  <anonymous class>.fxdriver.cache.getElementAt(resource://fxdriver/modules/web-element-cache.js:9357)
+  <anonymous class>.Utils.getElementAt(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous7233843325987907043webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:8978)
+  <anonymous class>.fxdriver.preconditions.visible(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous7233843325987907043webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9979)
+  <anonymous class>.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous7233843325987907043webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12517)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous7233843325987907043webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+  <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous7233843325987907043webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:621)
+]]>
+      </failure>
+
+          </testcase>
+  
+  
+            <testcase name="test填制凭证" time="24.272" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test会计科目" time="49.510" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test利润表季报" time="14.192" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test数量金额明细帐" time="8.162" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test期末处理" time="35.702" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test科目总账" time="13.902" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test发生额及余额表" time="14.153" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test序时账" time="14.275" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test科目明细帐" time="14.176" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test现金流量表" time="14.298" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test数量金额总账" time="7.646" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test填制凭证其它功能" time="91.302" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test现金银行日记账" time="14.140" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test资产负债表" time="14.775" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test增值税和营业税月度申报对比表" time="14.554" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test汇率档案" time="28.614" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test科目汇总表" time="14.164" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test期初试算平衡其它按钮" time="14.353" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test期初试算平衡" time="50.595" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test凭证管理" time="50.410" classname="com.dzf.test.testscenery.TestScenery2" />
+      
+</testsuite>

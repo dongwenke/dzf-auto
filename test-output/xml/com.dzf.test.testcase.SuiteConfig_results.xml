@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="scenery2"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="1"
+           time="0.000">
+  <properties />
+  
+            <testcase name="suiteTearDown" time="0.0" classname="com.dzf.test.testcase.SuiteConfig">
+          <skipped />
+    </testcase>
+  
+  
+</testsuite>

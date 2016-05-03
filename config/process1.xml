@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="dzf-auto" preserve-order="true" allow-return-values="true">
+
+	<packages>
+		<package name="com.dzf.test.*"></package>
+	</packages>
+
+	<test name="scenery1" enabled="false" preserve-order="true">
+		<parameter name="用户名" value="taozi001"></parameter>
+		<parameter name="密码" value="taozi001!!"></parameter>
+		<parameter name="公司名称" value="桃子传媒"></parameter>
+
+		<classes>
+			<class name="com.dzf.test.testcase.SuiteConfig"></class>
+			<class name="com.dzf.test.testscenery.TestScenery1">
+				<methods>
+					<include name="setup"></include>
+
+					<include name="test期初试算平衡">
+						<parameter name="科目一" value="1001_库存现金"></parameter>
+						<parameter name="币别一" value="人民币"></parameter>
+						<parameter name="修改项一" value="本年期初金额"></parameter>
+						<parameter name="金额一" value="10000"></parameter>
+
+						<parameter name="科目二" value="2001_短期借款"></parameter>
+						<parameter name="币别二" value="人民币"></parameter>
+						<parameter name="修改项二" value="本年期初金额"></parameter>
+						<parameter name="金额二" value="10000"></parameter>
+					</include>
+
+					<!-- <include name="test填制凭证"> -->
+					<!-- <parameter name="摘要" value="测试摘要"></parameter> -->
+					<!-- <parameter name="科目一" value="库存现金"></parameter> -->
+					<!-- <parameter name="金额" value="100"></parameter> -->
+					<!-- <parameter name="科目二" value="银行存款"></parameter> -->
+					<!-- </include> -->
+
+					<!-- <include name="test凭证管理"> -->
+					<!-- <parameter name="查询方式" value="期间"></parameter> -->
+					<!-- <parameter name="开始日期" value="2016-04"></parameter> -->
+					<!-- <parameter name="结束日期" value="2016-04"></parameter> -->
+					<!-- </include> -->
+
+					<!-- <include name="test期末处理"> -->
+					<!-- <parameter name="开始日期" value="2016-04"></parameter> -->
+					<!-- <parameter name="结束日期" value="2016-12"></parameter> -->
+					<!-- </include> -->
+
+					<!-- <include name="test科目总账"></include> -->
+					<!-- <include name="test科目明细帐"></include> -->
+					<!-- <include name="test现金银行日记账"></include> -->
+					<!-- <include name="test发生额及余额表"></include> -->
+					<!-- <include name="test序时账"></include> -->
+					<!-- <include name="test科目汇总表"></include> -->
+					<!-- <include name="test数量金额明细帐"></include> -->
+					<!-- <include name="test数量金额总账"></include> -->
+					<!-- <include name="test利润表季报"></include> -->
+					<!-- <include name="test利润表"></include> -->
+					<!-- 13小企业不包含该项 -->
+					<!-- <include name="test收入支出表"></include> -->
+
+					<include name="test现金流量表"></include>
+
+					<!-- 13小企业不包含该项 -->
+					<!-- <include name="test业务活动表"></include> -->
+
+					<!-- <include name="test增值税和营业税月度申报对比表"></include> -->
+					<!-- <include name="test资产负债表"></include> -->
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="scenery2" enabled="true" preserve-order="true">
+		<parameter name="用户名" value="taozi001"></parameter>
+		<parameter name="密码" value="taozi001!!"></parameter>
+		<parameter name="公司名称" value="桃子传媒"></parameter>
+		<classes>
+			<class name="com.dzf.test.testcase.SuiteConfig"></class>
+			<class name="com.dzf.test.testscenery.TestScenery2">
+				<methods>
+
+					<include name="setup"></include>
+
+					<include name="test汇率档案">
+						<parameter name="币种" value="美元"></parameter>
+						<parameter name="汇率" value="6.5"></parameter>
+						<parameter name="折算模式" value="原币×汇率=本位币"></parameter>
+						<parameter name="是否浮动汇率" value="是"></parameter>
+						<parameter name="备注" value="美元6.5"></parameter>
+					</include>
+
+					<include name="test会计科目">
+						<parameter name="科目" value="其他货币资金"></parameter>
+						<parameter name="币别" value="美元"></parameter>
+					</include>
+					
+					<include name="test期初试算平衡">
+						<parameter name="科目一" value="1012_其他货币资金"></parameter>
+						<parameter name="币别一" value="美元"></parameter>
+						<parameter name="修改项一" value="原币本年期初"></parameter>
+						<parameter name="金额一" value="10000"></parameter>
+
+						<parameter name="科目二" value="2001_短期借款"></parameter>
+						<parameter name="币别二" value="人民币"></parameter>
+						<parameter name="修改项二" value="本年期初金额"></parameter>
+						<parameter name="金额二" value="65000"></parameter>
+					</include>
+					<include name="test期初试算平衡其它按钮"></include>
+
+					<include name="test填制凭证">
+						<parameter name="摘要" value="测试摘要"></parameter>
+						<parameter name="科目一" value="其他货币资金"></parameter>
+						<parameter name="汇率" value="6.5"></parameter>
+						<parameter name="原币" value="100"></parameter>
+						<parameter name="金额" value="650"></parameter>
+						<parameter name="科目二" value="银行存款"></parameter>
+					</include>
+
+					<include name="test填制凭证其它功能"></include>
+
+					<include name="test凭证管理">
+						<parameter name="查询方式" value="期间"></parameter>
+						<parameter name="开始日期" value="2016-04"></parameter>
+						<parameter name="结束日期" value="2016-04"></parameter>
+					</include>
+
+					<include name="test期末处理">
+						<parameter name="开始日期" value="2016-04"></parameter>
+						<parameter name="结束日期" value="2016-12"></parameter>
+					</include>
+
+					<include name="test科目总账"></include>
+					<include name="test科目明细帐"></include>
+					<include name="test现金银行日记账"></include>
+					<include name="test发生额及余额表"></include>
+					<include name="test序时账"></include>
+					<include name="test科目汇总表"></include>
+					<include name="test数量金额明细帐"></include>
+					<include name="test数量金额总账"></include>
+					<include name="test利润表季报"></include>
+					<include name="test利润表"></include>
+					<!-- 13小企业不包含该项 -->
+					<!-- <include name="test收入支出表"></include> -->
+
+					<include name="test现金流量表"></include>
+
+					<!-- 13小企业不包含该项 -->
+					<!-- <include name="test业务活动表"></include> -->
+
+					<include name="test增值税和营业税月度申报对比表"></include>
+					<include name="test资产负债表"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<listeners>
+		<!-- reportNg Listener -->
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<!-- arrow Listener -->
+		<listener class-name="com.netease.qa.testng.TestResultListener" />
+		<listener class-name="com.netease.qa.testng.RetryListener" />
+		<listener class-name="com.netease.qa.testng.PowerEmailableReporter" />
+		<!-- self Listener -->
+		<listener class-name="com.dzf.test.util.testng.ScreenShotListener" />
+		<!-- selenium自带Listener -->
+		<!-- <listener class-name="com.thoughtworks.selenium.ScreenshotListener" 
+			/> -->
+
+	</listeners>
+</suite>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="accounting" preserve-order="true">
+
+	<packages>
+		<package name="com.dzf.test.*"></package>
+	</packages>
+
+	<test name="scenery1" enabled="true" preserve-order="true">
+		<!-- <groups> -->
+		<!-- <dependencies> -->
+		<!-- <group depends-on="login" name="logged-in"></group> -->
+		<!-- </dependencies> -->
+		<!-- </groups> -->
+
+		<parameter name="开始年月" value="2016-04"></parameter>
+		<parameter name="结束年月" value="2016-12"></parameter>
+
+		<classes>
+			<class name="com.dzf.test.testcase.SuiteConfig"></class>
+			<class name="com.dzf.test.testcase.SetUpVerifyQiChuPingOrBuping"></class>
+
+			<!-- <class name="com.dzf.test.testcase.KeMuQiChuYuEPageTest"> -->
+			<!-- <methods> -->
+			<!-- <parameter name="期初设置是否平衡" value="true"></parameter> -->
+			<!-- <include name="testModefyBalance"></include> -->
+			<!-- </methods> -->
+			<!-- </class> -->
+
+			<class name="com.dzf.test.testcase.FillVoucherPageTest"></class>
+
+			<class name="com.dzf.test.testcase.QiMoChuLiPageTest">
+				<methods>
+					<parameter name="损益结转开始年月" value="2016-04"></parameter>
+					<parameter name="损益结转结束年月" value="2016-12"></parameter>
+					<include name="testQiJianSunYiJieZhuan"></include>
+				</methods>
+			</class>
+
+			<class name="com.dzf.test.testcase.VoucherManagePageTest">
+				<methods>
+					<include name="testAuditVoucher"></include>
+					<include name="testAccountVoucher"></include>
+				</methods>
+			</class>
+
+			<class name="com.dzf.test.testcase.LedgerFinalCheckoutPageTest"></class>
+
+		</classes>
+	</test>
+
+	<test name="scenery2" enabled="false" preserve-order="true">
+		<!-- <groups> -->
+		<!-- <dependencies> -->
+		<!-- <group depends-on="login" name="logged-in"></group> -->
+		<!-- </dependencies> -->
+		<!-- </groups> -->
+
+		<parameter name="开始年月" value="2016-04"></parameter>
+		<parameter name="结束年月" value="2016-12"></parameter>
+		<classes>
+			<class name="com.dzf.test.testcase.SuiteConfig"></class>
+			<class name="com.dzf.test.testcase.SetUpVerifyQiChuPingOrBuping"></class>
+			<!-- <class name="com.dzf.test.testcase.LoginPageTest"></class> -->
+			<class name="com.dzf.test.testcase.KeMuQiChuYuEPageTest">
+				<methods>
+					<parameter name="期初设置是否平衡" value="false"></parameter>
+					<include name="testModefyBalance"></include>
+				</methods>
+			</class>
+			<class name="com.dzf.test.testcase.FillVoucherPageTest"></class>
+			<class name="com.dzf.test.testcase.VoucherManagePageTest">
+				<methods>
+					<include name="testAuditVoucher"></include>
+					<include name="testAccountVoucher"></include>
+				</methods>
+			</class>
+			<class name="com.dzf.test.testcase.QiMoChuLiPageTest">
+				<methods>
+					<parameter name="损益结转开始年月" value="2016-04"></parameter>
+					<parameter name="损益结转结束年月" value="2016-04"></parameter>
+					<include name="testQiJianSunYiJieZhuan"></include>
+				</methods>
+			</class>
+
+		</classes>
+	</test>
+
+
+	<test name="scenery5" enabled="false" preserve-order="true">
+
+		<parameter name="开始年月" value="2016-04"></parameter>
+		<parameter name="结束年月" value="2016-12"></parameter>
+
+		<classes>
+			<class name="com.dzf.test.testcase.SuiteConfig"></class>
+			<class name="com.dzf.test.testcase.SetUpVerifyQiChuPingOrBuping"></class>
+
+			<class name="com.dzf.test.testcase.KeMuQiChuYuEPageTest">
+				<methods>
+					<parameter name="期初设置是否平衡" value="true"></parameter>
+					<include name="testModefyBalance"></include>
+				</methods>
+			</class>
+			<class name="com.dzf.test.testcase.FillVoucherPageTest"></class>
+			<class name="com.dzf.test.testcase.VoucherManagePageTest">
+				<methods>
+					<include name="testAuditVoucher"></include>
+					<include name="testAccountVoucher"></include>
+				</methods>
+			</class>
+			<class name="com.dzf.test.testcase.QiMoChuLiPageTest">
+				<methods>
+					<include name="testQiJianSunYiJieZhuan"></include>
+				</methods>
+			</class>
+
+			<class name="com.dzf.test.testcase.VoucherManagePageTest">
+				<methods>
+					<include name="testAuditVoucher"></include>
+					<include name="testAccountVoucher"></include>
+				</methods>
+			</class>
+
+			<class name="com.dzf.test.testcase.LedgerFinalCheckoutPageTest"></class>
+
+		</classes>
+	</test>
+
+
+</suite>

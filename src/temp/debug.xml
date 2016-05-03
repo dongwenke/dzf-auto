@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="debug" preserve-order="true">
+
+	<packages>
+		<package name="com.dzf.test.*"></package>
+	</packages>
+
+	<test name="scenery1" enabled="true" preserve-order="true">
+
+		<parameter name="开始年月" value="2016-04"></parameter>
+		<parameter name="结束年月" value="2016-12"></parameter>
+
+		<classes>
+			<class name="com.dzf.test.testcase.SuiteConfig"></class>
+			<!-- <class name="com.dzf.test.testcase.SetUpVerifyQiChuPingOrBuping"></class> -->
+
+			<class name="temp.Test1"></class>
+		</classes>
+	</test>
+
+</suite>

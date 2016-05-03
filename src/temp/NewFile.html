@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<style>
+.bg {
+	position: absolute;
+	z-index: 999;
+	filter: alpha(opacity = 50);
+	background: #666;
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	left: 0;
+	top: 0;
+	height: 99%;
+	width: 100%;
+}
+
+.beian_winBG {
+	MARGIN-TOP: -100px;
+	LEFT: 50%;
+	MARGIN-LEFT: -190px;
+	WIDTH: 376px;
+	POSITION: absolute;
+	TOP: 50%;
+	HEIGHT: 200px;
+	border: #666666 1px solid;
+	z-index: 1000;
+}
+</style>
+
+	<div id="alert_win" style="display: none;">
+		<div id="mask"
+			style="top: 0; left: 0; position: absolute; z-index: 1000;"
+			class="bg"></div>
+		<DIV class=beian_winBG id=beian_popup>
+			<!--弹出框-->
+			<div id="divOneStep"
+				style="z-index: 1002; width: 100%; height: 200px; background: #fff; position: absolute;">
+				<div
+					style="width: 100%; background: #f1f1f1; height: 30px; light-height: 30px; border-bottom: #666666 1px solid; text-align: right;">
+					<a href="javascript:;" onClick="alert_win.style.display='none';">点此关闭</a>
+				</div>
+				<div>这里你可以加内容</div>
+			</div>
+			<div style="z-index: 1001; position: absolute;">
+				<iframe id="frmOneStep" width="100%" height="200" frameborder="0"
+					scrolling="no" src="about:blank"></iframe>
+			</div>
+		</DIV>
+	</div>
+	<a href="javascript:;" onClick="alert_win.style.display='block';">显示</a>
+
+</body>
+</html>

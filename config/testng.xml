@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="dzf-auto">
+	<suite-files>
+		<suite-file path="config/accounting.xml" />
+		<!-- <suite-file path="config/manage.xml" /> <suite-file path="config/bookkeeping.xml" 
+			/> -->
+	</suite-files>
+	<!-- listeners> <listener class-name="com.netease.qa.testng.TestResultListener" 
+		/> <listener class-name="com.netease.qa.testng.RetryListener" /> <listener 
+		class-name="com.netease.qa.testng.PowerEmailableReporter" /> </listeners> -->
+</suite>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="管理端用例" allow-return-values="true">
+
+	<test name="login">
+		<classes>
+			<class name="com.dzf.test.testcase.manage.ManageLoginPageTest">
+				<methods>
+					<!-- @Parameters({"用户名","密码","公司名称"}) -->
+					<parameter name="用户名" value="ali001"></parameter>
+					<parameter name="密码" value="ali001!!"></parameter>
+					<parameter name="公司名称" value="阿狸会计"></parameter>
+				</methods>
+			</class>
+			<class name="com.dzf.test.testcase.manage.ManageMainPageTest">
+			</class>
+		</classes>
+	</test>
+</suite>

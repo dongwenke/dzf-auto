@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page id="1" name="会计科目设置" url="">
+	<element id="1" name="会计科目iframe" method="name" value="会计科目"></element>
+	<element id="1" name="修改按钮" method="id" value="btn_modify"></element>
+	<element id="1" name="其它货币资金" method="xpath"
+		value=".//*[@id='datagrid-row-r1-1-1012']/td[3]/div"></element>
+	<element id="1" name="是否外汇核算选择按钮" method="xpath"
+		value=".//*[@id='accform']/table/tbody/tr[10]/td/span/span/a"></element>
+	<element id="1" name="是否外汇核算选项是" method="id"
+		value="_easyui_combobox_i10_0"></element>
+	<element id="1" name="外汇核算币种选择按钮" method="xpath"
+		value=".//*[@id='accform']/table/tbody/tr[11]/td/span/span/a"></element>
+	<element id="1" name="外汇核算币种选项-美元行" method="id"
+		value="datagrid-row-r9-2-7"></element>
+	<element id="1" name="外汇核算币种选项-美元复选框" method="xpath"
+		value=".//*[@id='whhsRefDlg']/div/div/div/div[2]/div[2]/table/tbody/tr[9]/td[1]/div/input"></element>
+	<element id="1" name="外汇核算币种选择面板-确定按钮" method="xpath"
+		value="html/body/div[10]/div[3]/a[1]/span/span"></element>
+	<element id="1" name="科目修改面板-保存按钮" method="xpath"
+		value=".//*[@id='dlg-Modifybuttons']/a[1]"></element>
+		<element id="1" name="科目修改面板-取消按钮" method="xpath"
+		value=".//*[@id='dlg-Modifybuttons']/a[2]"></element>
+		
+		<element id="1" name="外汇核算币种输入框" method="xpath"
+		value=".//input[@name='whhsmc']"></element>
+		
+
+	<element id="1" name="资产左table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[1]/div/div/div/div/div[1]/div[2]/div/table"></element>
+	<element id="1" name="资产右table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[1]/div/div/div/div/div[2]/div[2]/table"></element>
+		
+	<element id="1" name="负债左table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[2]/div/div/div/div/div[1]/div[2]/div/table"></element>
+	<element id="1" name="负债右table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[2]/div/div/div/div/div[2]/div[2]/table"></element>
+		
+	<element id="1" name="共同左table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[3]/div/div/div/div/div[1]/div[2]/div/table"></element>
+	<element id="1" name="共同右table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[3]/div/div/div/div/div[2]/div[2]/table"></element>
+		
+	<element id="1" name="所有者权益左table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[4]/div/div/div/div/div[1]/div[2]/div/table"></element>
+	<element id="1" name="所有者权益右table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[4]/div/div/div/div/div[2]/div[2]/table"></element>
+		
+	<element id="1" name="成本左table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[5]/div/div/div/div/div[1]/div[2]/div/table"></element>
+	<element id="1" name="成本右table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[5]/div/div/div/div/div[2]/div[2]/table"></element>
+		
+	<element id="1" name="损益左table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[6]/div/div/div/div/div[1]/div[2]/div/table"></element>
+	<element id="1" name="损益右table" method="xpath"
+		value=".//*[@id='km_tabs']/div[2]/div[6]/div/div/div/div/div[2]/div[2]/table"></element>
+		
+	<element id="1" name="资产-其他货币资金-外汇核算币种" method="xpath"
+		value=".//*[@id='datagrid-row-r1-2-1012']/td[@field='whhsmc']/div"></element>
+	<element id="1" name="刷新按钮" method="id" value="btn_refresh"></element>
+
+
+
+	<element id="1" name="资产类别" method="xpath"
+		value=".//*[@id='km_tabs']/div[1]/div[3]/ul/li[contains(.,'资产')]/a"></element>
+	<element id="1" name="负债类别" method="xpath"
+		value=".//*[@id='km_tabs']/div[1]/div[3]/ul/li[contains(.,'负债')]/a"></element>
+	<element id="1" name="共同类别" method="xpath"
+		value=".//*[@id='km_tabs']/div[1]/div[3]/ul/li[contains(.,'共同')]/a"></element>
+	<element id="1" name="所有者权益类别" method="xpath"
+		value=".//*[@id='km_tabs']/div[1]/div[3]/ul/li[contains(.,'所有者权益')]/a"></element>
+	<element id="1" name="成本类别" method="xpath"
+		value=".//*[@id='km_tabs']/div[1]/div[3]/ul/li[contains(.,'成本')]/a"></element>
+	<element id="1" name="损益类别" method="xpath"
+		value=".//*[@id='km_tabs']/div[1]/div[3]/ul/li[contains(.,'损益')]/a"></element>
+		
+	<element id="1" name="外汇核算币种面板table" method="xpath" value="//*[@id='whhsRefDlg']/div/div/div/div[2]/div[2]/table"></element>
+	<element id="1" name="" method="id" value="user_code"></element>
+	<element id="1" name="" method="id" value="user_code"></element>
+	<element id="1" name="" method="id" value="user_code"></element>
+	<element id="1" name="" method="id" value="user_code"></element>
+	<element id="1" name="" method="id" value="user_code"></element>
+	<element id="1" name="" method="id" value="user_code"></element>
+	<element id="1" name="" method="id" value="user_code"></element>
+	<element id="1" name="" method="id" value="user_code"></element>
+	<element id="1" name="" method="id" value="user_code"></element>
+</page>
