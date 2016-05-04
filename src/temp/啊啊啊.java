@@ -37,29 +37,16 @@ public class 啊啊啊 {
 	@Test()
 	public void testOpenFrame() throws InterruptedException, MyException {
 		AccountingMainPage mainPage = new AccountingMainPage();
-		mainPage.openFrame("填制凭证");
-		mainPage.openFrame("凭证管理");
-		mainPage.openFrame("利润表季报");
-		mainPage.openFrame("利润表");
-//		mainPage.openFrame("收入支出表");
-		mainPage.openFrame("现金流量表");
-//		mainPage.openFrame("业务活动表");
-		mainPage.openFrame("增值税和营业税月度申报对比表");
-		mainPage.openFrame("资产负债表");
-		mainPage.openFrame("常用凭证模版");
-		mainPage.openFrame("汇率档案");
-		mainPage.openFrame("会计科目");
-		mainPage.openFrame("科目期初余额");
-		mainPage.openFrame("期末处理");
-		mainPage.openFrame("总账期末结账");
-		mainPage.openFrame("发生额及余额表");
-		mainPage.openFrame("科目汇总表");
-		mainPage.openFrame("科目明细账");
-		mainPage.openFrame("科目总账");
-		mainPage.openFrame("数量金额明细账");
-		mainPage.openFrame("数量金额总账");
-		mainPage.openFrame("现金银行日记账");
-		mainPage.openFrame("序时账");
+		mainPage.openFrame("卡片管理");
+		mainPage.openFrame("原值变更");
+		mainPage.openFrame("资产清理");
+		mainPage.openFrame("工作量管理");
+
+		mainPage.openFrame("折旧汇总表");
+		mainPage.openFrame("资产明细账");
+		mainPage.openFrame("资产总账");
+		mainPage.openFrame("资产与总账对账表");
+		mainPage.openFrame("资产折旧明细");
 
 	}
 

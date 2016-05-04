@@ -6,9 +6,10 @@ import com.dzf.test.util.XMLUtil;
 
 public class 资产明细账Page  extends Handler {
 
+	private final String xmlfile = "./config/page/accounting/资产报表/" + this.getClass().getSimpleName() + ".xml";
+
 	public 资产明细账Page() throws Exception {
 		super();
-		page = XMLUtil.convert("./config/page/accounting/资产报表/" + this.getClass().getSimpleName() + ".xml",
-				Page.class.getName());
+		page = XMLUtil.convert(xmlfile, Page.class);
 	}
 }

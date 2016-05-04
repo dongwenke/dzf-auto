@@ -915,7 +915,6 @@ public class AccountingMainPage extends Handler {
 			// 检查填制凭证是否显示如果显示关闭该标签页
 			WebElement 标签栏 = getWebElement("全部标签页");
 
-			System.out.println(1);
 			try {
 				isDisplayed(标签栏.findElement(By.xpath(".//li/a[1]/span[1][text()='" + lableName + "']")));
 			} catch (NoSuchElementException e) {

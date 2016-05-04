@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page id="1" name="卡片管理" url="">
+	<element id="1" name="录入期间选择按钮" method="xpath" value="//input[@name='dperiod']/../span/a"></element>
+	<element id="1" name="录入期间时间选择器" method="xpath" value="html/body/div[13]"></element>
+	<element id="1" name="资产编码输入框" method="xpath" value="//input[@name='zcbm']/../input[@type='text']"></element>
+	<element id="1" name="资产名称输入框" method="xpath" value="//input[@name='asname']/../input[@type='text']"></element>
+	<element id="1" name="资产类别选择按钮" method="xpath" value="//input[@name='assetcate']/../span/a"></element>
+	<element id="1" name="资产类别面板-输入框" method="id" value="zcmc"></element>
+	<element id="1" name="资产类别面板-确定按钮" method="xpath" value="//div[@id='selectZclb']/../div[3]/a[contains(.,'确认')]"></element>
+	<element id="1" name="开始使用日期选择按钮" method="xpath" value="//input[@name='adate']/../span/a"></element>
+	<element id="1" name="开始使用日期时间选择器" method="xpath" value="html/body/div[14]"></element>
+	<element id="1" name="折旧方式下拉按钮" method="xpath" value="//input[@name='zjtype']/../span/a"></element>
+	<element id="1" name="折旧方式-平均年限法" method="xpath" value="//div[text()='平均年限法']"></element>
+	<element id="1" name="折旧方式-工作量法" method="xpath" value="//div[text()='工作量法']"></element>
+	<element id="1" name="折旧方式-双倍余额递减法" method="xpath" value="//div[text()='双倍余额递减法']"></element>
+	<element id="1" name="预计使用年限输入框" method="xpath" value="//input[@name='ulimit']/../input[@type='text']"></element>
+	<element id="1" name="工作总量输入框" method="xpath" value="//input[@name='gzzl']/../input[@type='text']"></element>
+	<element id="1" name="工作量单位输入框" method="xpath" value="//input[@name='gzldw']/../input[@type='text']"></element>
+	<element id="1" name="固定(无形)资产科目选择按钮" method="xpath" value="//input[@name='zckm']/../span/a"></element>
+	<element id="1" name="选择科目面板" method="xpath" value="//div[@id='selectKm']/.."></element>
+	<element id="1" name="结算科目选择按钮" method="xpath" value="//input[@name='jskm']/../span/a"></element>
+	<element id="1" name="折旧(摊销)科目选择按钮" method="xpath" value="//input[@name='jtzjkm']/../span/a"></element>
+	<element id="1" name="折旧(摊销)费用科目选择按钮" method="xpath" value="//input[@name='zjfykm']/../span/a"></element>
+	<element id="1" name="原值输入框" method="xpath" value="//input[@name='atmny']/../input[@type='text']"></element>
+	<element id="1" name="是否期初选择按钮" method="xpath" value="//input[@name='periodbegin']/../span/a"></element>
+	<element id="1" name="是否期初选项-是" method="xpath" value="html/body/div[8]/div/div[contains(.,'是')]"></element>
+	<element id="1" name="是否期初选项-否" method="xpath" value="html/body/div[8]/div/div[text()='否']"></element>
+	<element id="1" name="期初信息备注输入框" method="xpath" value="//input[@name='memo']/../input[@type='text']"></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="" method="" value=""></element>
+
+</page>

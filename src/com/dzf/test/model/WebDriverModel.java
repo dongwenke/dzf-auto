@@ -26,7 +26,7 @@ public class WebDriverModel {
 		driver.manage().window().maximize();
 		
 		if (this.wait == null){
-			this.wait = new WebDriverWait(this.driver, 2);
+			this.wait = new WebDriverWait(this.driver, 5);
 		}
 	}
 	

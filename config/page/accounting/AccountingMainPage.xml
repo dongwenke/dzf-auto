@@ -32,9 +32,12 @@
 	<element id="" name="公司名称" method="id" value="corp_name"></element>
 
 	<!-- 左侧大类 -->
-	<element id="3" name="总账" method="xpath" value="//div[contains(.,'总账')]"></element>
-	<element id="4" name="固定资产" method="xpath" value="//div[contains(.,'固定资产')]"></element>
-	<element id="5" name="库存管理" method="xpath" value="//div[contains(.,'库存管理')]"></element>
+	<element id="3" name="总账" method="xpath"
+		value=".//*[@id='sidebar']/div[contains(.,'总账')]/div[1]/div[1]"></element>
+	<element id="4" name="固定资产" method="xpath"
+		value=".//*[@id='sidebar']/div[contains(.,'固定资产')]/div[1]/div[1]"></element>
+	<element id="5" name="库存管理" method="xpath"
+		value=".//*[@id='sidebar']/div[contains(.,'库存管理')]/div[1]/div[1]"></element>
 
 	<!-- 左侧小类 -->
 	<element id="6" name="凭证管理" method="xpath"
@@ -47,6 +50,10 @@
 		value=".//*[@id='总账_WDZF02SS0ESS00000EE00141']/a"></element>
 	<element id="" name="科目账表" method="xpath"
 		value=".//*[@id='总账_WDZF02SS0ESS00000EE00105']/a"></element>
+	<element id="" name="资产管理" method="xpath"
+		value=".//*[@id='固定资产_WDZF02SS0ESS00000EE00181']/a"></element>
+	<element id="" name="资产报表" method="xpath"
+		value=".//*[@id='固定资产_WDZF02SS0ESS00000EE00197']/a"></element>
 
 	<!-- 悬浮按钮 -->
 	<element id="7" name="填制凭证悬浮" method="id" value="填制凭证"></element>
@@ -74,6 +81,17 @@
 	<element id="" name="数量金额总账悬浮" method="id" value="数量金额总账"></element>
 	<element id="" name="现金银行日记账悬浮" method="id" value="现金/银行日记账"></element>
 	<element id="" name="序时账悬浮" method="id" value="序时账"></element>
+	
+	<element id="" name="卡片管理悬浮" method="id" value="卡片管理"></element>
+	<element id="" name="原值变更悬浮" method="id" value="原值变更"></element>
+	<element id="" name="资产清理悬浮" method="id" value="资产清理"></element>
+	<element id="" name="工作量管理悬浮" method="id" value="工作量管理"></element>
+	<element id="" name="折旧汇总表悬浮" method="id" value="折旧汇总表"></element>
+	<element id="" name="资产明细账悬浮" method="id" value="资产明细账"></element>
+	<element id="" name="资产与总账对账表悬浮" method="id" value="资产与总账对账表"></element>
+	<element id="" name="资产折旧明细悬浮" method="id" value="资产折旧明细"></element>
+	<element id="" name="资产总账悬浮" method="id" value="资产总账"></element>
+	
 
 	<!-- iframe -->
 	<element id="13" name="填制凭证iframe" method="name" value="填制凭证"></element>
