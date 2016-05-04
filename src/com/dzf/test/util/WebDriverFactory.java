@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -74,7 +75,7 @@ public class WebDriverFactory implements ILogUtil {
 	}
 
 	public static WebDriver createChrome() {
-		System.setProperty("webdriver.chrome.driver", "driver/chromedriver_v2.15.322448.exe");
+		System.setProperty("webdriver.chrome.driver", "/driver/chromedriver_v2.15.322448.exe");
 		return new ChromeDriver();
 	}
 

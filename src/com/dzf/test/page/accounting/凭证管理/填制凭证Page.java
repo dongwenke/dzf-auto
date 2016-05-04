@@ -3,6 +3,7 @@ package com.dzf.test.page.accounting.凭证管理;
 import java.util.Iterator;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.Reporter;
 
 import com.dzf.test.model.Handler;
@@ -277,7 +278,7 @@ public class 填制凭证Page extends Handler {
 			Reporter.log("按月复制弹窗未显示");
 			return;
 		}
-		
+
 		Reporter.log("点击开始年份选择按钮");
 		click("开始年份选择按钮");
 
@@ -381,9 +382,9 @@ public class 填制凭证Page extends Handler {
 		click("删除按钮");
 
 		Thread.sleep(500);
-		
+
 		Reporter.log("点击取消按钮");
-		click(getWebElement(getWebElement("删除警告面板"),By.xpath("./div[2]/div[4]/a[2]")));
+		click(getWebElement(getWebElement("删除警告面板"), By.xpath("./div[2]/div[4]/a[2]")));
 
 		Thread.sleep(500);
 
@@ -413,7 +414,7 @@ public class 填制凭证Page extends Handler {
 			Reporter.log("按月复制弹窗未显示");
 			return;
 		}
-		
+
 		Reporter.log("点击开始年份选择按钮");
 		click("开始年份选择按钮");
 
@@ -453,11 +454,11 @@ public class 填制凭证Page extends Handler {
 
 		Reporter.log("点击保存为常用凭证模版按钮");
 		click("保存为常用凭证模版按钮");
-		
-		Reporter.log("模版编码输入框输入："+templetCode);
+
+		Reporter.log("模版编码输入框输入：" + templetCode);
 		input("模版编码输入框", templetCode);
 
-		Reporter.log("模版名称输入框输入："+templetCode);
+		Reporter.log("模版名称输入框输入：" + templetCode);
 		input("模版名称输入框", templetName);
 
 		Reporter.log("点击保存按钮");
@@ -482,6 +483,24 @@ public class 填制凭证Page extends Handler {
 	public boolean 红字回冲() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public void 转总账(String useDate) throws MyException {
+		try {
+			switchToDefaultContent();
+			switchToFrame("填制凭证");
+			
+			//修改日期使用日期
+			input("日期输入框", useDate);
+			input("日期输入框", Keys.RETURN);
+			
+			click("保存按钮");
+			
+		} catch (MyException e) {
+			Reporter.log(e.getMessage());
+			Reporter.log("转总账失败！");
+			throw e;
+		}
 	}
 
 }

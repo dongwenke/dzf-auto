@@ -1,5 +1,13 @@
 package temp;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -7,6 +15,8 @@ import org.testng.annotations.Test;
 
 import com.dzf.test.page.accounting.AccountingLoginPage;
 import com.dzf.test.page.accounting.AccountingMainPage;
+import com.dzf.test.page.accounting.资产管理.卡片管理Page;
+import com.dzf.test.util.DatePickerUtil;
 import com.dzf.test.util.MyException;
 
 public class 啊啊啊 {
@@ -18,35 +28,33 @@ public class 啊啊啊 {
 
 	}
 
-	// @AfterTest
-	// public void teardown() throws InterruptedException, MyException {
-	// try {
-	// mainPage.logout();
-	//
-	// } catch (MyException e) {
-	// logger.error("退出失败！", e);
-	// Reporter.log(e.getMessage());
-	// Reporter.log("退出失败！");
-	// throw e;
-	// }
-	// }
-
 	/*
 	 * 设置汇率档案
 	 */
-	@Test()
-	public void testOpenFrame() throws InterruptedException, MyException {
-		AccountingMainPage mainPage = new AccountingMainPage();
-		mainPage.openFrame("卡片管理");
-		mainPage.openFrame("原值变更");
-		mainPage.openFrame("资产清理");
-		mainPage.openFrame("工作量管理");
+//	public void testOpenFrame() throws Exception {
+//		AccountingMainPage mainPage = new AccountingMainPage();
+//		卡片管理Page 卡片管理 = new 卡片管理Page();
+//		mainPage.openFrame("卡片管理");
+//		// 卡片管理.add("2016-05-04", "160504001", "办公桌", "0103", "2016-010-01",
+//		// "平均年限法", "12", "160103_器具、工具、家具等",
+//		// "1001_库存现金", "160203_器具、工具、家具等", "56010701_固定资产折旧", "2000", false,
+//		// "无备注");
+//		卡片管理.search("2010-01-01", "2020-12-31", null, null, "0103", null, null, null);
+		
+		
+//	}
+	
+	public static void main(String[] args) {
 
-		mainPage.openFrame("折旧汇总表");
-		mainPage.openFrame("资产明细账");
-		mainPage.openFrame("资产总账");
-		mainPage.openFrame("资产与总账对账表");
-		mainPage.openFrame("资产折旧明细");
+//		System.setProperty("webdriver.firefox.bin", "D:/Program Files (x86)/Mozilla Firefox/firefox.exe");
+//
+//		WebDriver driver = new FirefoxDriver();
+//		
+//		driver.get("http://172.16.2.142:8090/dzfadmin/");
+//		
+//		System.out.println(driver.findElements(By.xpath("//input[@name='date']/../input[@readonly='readonly1']")).size()>0);
+		
+		System.out.println(new SimpleDateFormat("yyMMddHHmmss-SSS").format(Calendar.getInstance().getTime()));
 
 	}
 

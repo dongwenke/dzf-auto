@@ -18,6 +18,7 @@ import com.dzf.test.page.accounting.基础设置_总账.科目期初余额Page;
 import com.dzf.test.page.accounting.科目账表.*;
 import com.dzf.test.page.accounting.结账办理.期末处理Page;
 import com.dzf.test.page.accounting.财务账表.*;
+import com.dzf.test.page.accounting.资产管理.卡片管理Page;
 import com.dzf.test.util.ILogUtil;
 import com.dzf.test.util.MyException;
 
@@ -50,6 +51,7 @@ public class TestScenery2 implements ILogUtil {
 	private 会计科目Page 会计科目;
 	private 科目期初余额Page 科目期初余额;
 	private 填制凭证Page 填制凭证;
+	private 卡片管理Page 卡片管理;
 	private 凭证管理Page 凭证管理;
 	private 期末处理Page 期末处理;
 
@@ -79,6 +81,7 @@ public class TestScenery2 implements ILogUtil {
 		会计科目 = new 会计科目Page();
 		科目期初余额 = new 科目期初余额Page();
 		填制凭证 = new 填制凭证Page();
+		卡片管理 = new 卡片管理Page();
 		凭证管理 = new 凭证管理Page();
 		期末处理 = new 期末处理Page();
 
@@ -122,16 +125,47 @@ public class TestScenery2 implements ILogUtil {
 	 * 设置会计科目 启用外币
 	 */
 	@Test()
-	@Parameters({"科目","币别"})
-	public void test会计科目(String subject,String currency) throws InterruptedException, MyException {
+	@Parameters({ "科目", "币别" })
+	public void test会计科目(String subject, String currency) throws InterruptedException, MyException {
 		mainPage.open会计科目();
-		会计科目.modify(subject,currency);
+		会计科目.modify(subject, currency);
+	}
+
+	/*
+	 * 期初录入固定资产卡片
+	 */
+	@Test
+	@Parameters({ "录入期间", "资产编码", "资产名称", "资产类别", "开始使用日期", "折旧方式", "预计使用年限", "固定(无形)资产科目", "结算科目", "折旧(摊销)科目",
+			"折旧(摊销)费用科目", "原值", "是否期初", "期初信息备注" })
+	public void test期初录入固定资产卡片(String date, String code, String name, String classesCode, String useDate,
+			String depreciationMethod, String life, String assetSubject, String settlementSubject,
+			String depreciationSubject, String depreciationCostSubject, String originalValue, boolean 是否期初,
+			String 期初信息备注) throws MyException, InterruptedException {
+		try {
+			mainPage.openFrame("卡片管理");
+			卡片管理.search("2010-01-01", "2020-12-31", null, null, null, null, null, null);
+
+			if (卡片管理.existAssetCode(code)) {
+				Assert.assertTrue(false, "资产编码已存在！增加失败！");
+			}
+
+			boolean added = 卡片管理.add(date, code, name, classesCode, useDate, depreciationMethod, life, assetSubject, settlementSubject,
+					depreciationSubject, depreciationCostSubject, originalValue, 是否期初, 期初信息备注);
+			
+			Assert.assertTrue(added,"卡片已添加，编号："+卡片管理.getCardCode());
+			
+		} catch (MyException e) {
+			logger.error("固定资产卡片管理操作失败！", e);
+			Reporter.log(e.getMessage());
+			Reporter.log("固定资产卡片管理操作失败！");
+			throw e;
+		}
 	}
 
 	/*
 	 * 期初试算平衡
 	 */
-	@Test(dependsOnMethods = { "test汇率档案", "test会计科目" } )
+	@Test(dependsOnMethods = { "test汇率档案", "test会计科目" ,"test期初录入固定资产卡片"})
 	@Parameters({ "科目一", "币别一", "修改项一", "金额一", "科目二", "币别二", "修改项二", "金额二" })
 	public void test期初试算平衡(String subject1, String currency1, String project1, String num1, String subject2,
 			String currency2, String project2, String num2) throws InterruptedException, MyException {
@@ -143,7 +177,7 @@ public class TestScenery2 implements ILogUtil {
 			科目期初余额.fixedAssetsSync();
 
 			科目期初余额.trialBalancing();
-//			Assert.assertEquals(科目期初余额.getBalanceInfo(), "平衡", "期初是否平衡");
+			// Assert.assertEquals(科目期初余额.getBalanceInfo(), "平衡", "期初是否平衡");
 
 		} catch (MyException e) {
 			logger.error("期初试算平衡失败！", e);
@@ -170,7 +204,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期初试算平衡" } )
+	@Test(dependsOnMethods = { "test期初试算平衡" })
 	@Parameters({ "摘要", "科目一", "汇率", "原币", "金额", "科目二" })
 	public void test填制凭证(String summary, String subject1, String rate, String original, String num, String subject2)
 			throws InterruptedException, MyException {
@@ -237,7 +271,40 @@ public class TestScenery2 implements ILogUtil {
 		}
 	}
 
-	@Test(dependsOnMethods = { "test填制凭证" } )
+	/*
+	 * 期初录入固定资产卡片
+	 */
+	@Test(dependsOnMethods = { "test期初试算平衡" })
+	@Parameters({ "录入期间", "资产编码", "资产名称", "资产类别", "开始使用日期", "折旧方式", "预计使用年限", "固定(无形)资产科目", "结算科目", "折旧(摊销)科目",
+			"折旧(摊销)费用科目", "原值", "是否期初", "期初信息备注" })
+	public void test期中录入固定资产卡片(String date, String code, String name, String classesCode, String useDate,
+			String depreciationMethod, String life, String assetSubject, String settlementSubject,
+			String depreciationSubject, String depreciationCostSubject, String originalValue, boolean 是否期初,
+			String 期初信息备注) throws MyException, InterruptedException {
+		try {
+			mainPage.openFrame("卡片管理");
+			
+			卡片管理.search("2010-01-01", "2020-12-31", null, null, null, null, null, null);
+
+			if (卡片管理.existAssetCode(code)) {
+				Assert.assertTrue(false, "资产编码已存在！增加失败！");
+			}
+			
+			卡片管理.add(date, code, name, classesCode, useDate, depreciationMethod, life, assetSubject, settlementSubject,
+					depreciationSubject, depreciationCostSubject, originalValue, 是否期初, 期初信息备注);
+			
+			卡片管理.convertLedgerOnCardShow();
+			
+			Assert.assertTrue(true, "卡片："+卡片管理.getCardCode()+"已添加并转总账");
+		} catch (MyException e) {
+			logger.error("固定资产卡片管理操作失败！", e);
+			Reporter.log(e.getMessage());
+			Reporter.log("固定资产卡片管理操作失败！");
+			throw e;
+		}
+	}
+
+	@Test(dependsOnMethods = { "test填制凭证" })
 	@Parameters({ "查询方式", "开始日期", "结束日期" })
 	public void test凭证管理(String byDateOrPeriod, String beginDate, String endDate)
 			throws InterruptedException, MyException {
@@ -273,7 +340,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(description = "期末处理", dependsOnMethods = { "test凭证管理" } )
+	@Test(description = "期末处理", dependsOnMethods = { "test凭证管理" })
 	@Parameters({ "开始日期", "结束日期" })
 	public void test期末处理(String beginDate, String endDate) throws InterruptedException, MyException {
 
@@ -302,7 +369,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test科目总账() throws InterruptedException, MyException {
 
 		try {
@@ -319,7 +386,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test科目明细帐() throws InterruptedException, MyException {
 
 		try {
@@ -336,7 +403,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test现金银行日记账() throws InterruptedException, MyException {
 
 		try {
@@ -353,7 +420,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test发生额及余额表() throws InterruptedException, MyException {
 
 		try {
@@ -370,7 +437,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test序时账() throws InterruptedException, MyException {
 		try {
 			mainPage.open序时账();
@@ -386,7 +453,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test科目汇总表() throws InterruptedException, MyException {
 		try {
 			mainPage.open科目汇总表();
@@ -402,7 +469,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test数量金额明细帐() throws InterruptedException, MyException {
 		try {
 			mainPage.open数量金额明细账();
@@ -418,7 +485,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test数量金额总账() throws InterruptedException, MyException {
 		try {
 			mainPage.open数量金额总账();
@@ -434,7 +501,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test利润表季报() throws InterruptedException, MyException {
 		try {
 			mainPage.open利润表季报();
@@ -450,7 +517,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test利润表() throws InterruptedException, MyException {
 		try {
 			mainPage.open利润表();
@@ -521,7 +588,7 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test增值税和营业税月度申报对比表() throws InterruptedException, MyException {
 
 		try {
@@ -536,7 +603,7 @@ public class TestScenery2 implements ILogUtil {
 		}
 	}
 
-	@Test(dependsOnMethods = { "test期末处理" } )
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test资产负债表() throws InterruptedException, MyException {
 		try {
 			mainPage.open资产负债表();

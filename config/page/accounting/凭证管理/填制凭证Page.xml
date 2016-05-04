@@ -132,6 +132,12 @@
 	<element id="" name="期间损益结转完成提示面板-确定按钮" method="xpath"
 		value="//div[contains(.,'期间损益结转已完成，是否继续？？')]/div/a[contains(span,'确定')]"></element>
 	<element id="" name="反审核按钮" method="id" value="revAudit"></element>
+	<element id="" name="日期输入框" method="id" value="vch_date"></element>
+	<element id="" name="" method="" value=""></element>
+	<element id="" name="" method="" value=""></element>
+	<element id="" name="" method="" value=""></element>
+	<element id="" name="" method="" value=""></element>
+	<element id="" name="" method="" value=""></element>
 	<element id="" name="" method="" value=""></element>
 	<element id="" name="" method="" value=""></element>
 </page>

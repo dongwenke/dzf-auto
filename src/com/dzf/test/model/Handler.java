@@ -126,7 +126,7 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 			// wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			List<WebElement> elementList = driver.findElements(locator);
 
-			logger.info("【" + locator + "】 已找到！");
+			logger.info("【" + locator + "】 已找到！"+elementList.size()+"个元素");
 
 			return elementList;
 		} catch (WebDriverException e) {
@@ -217,16 +217,18 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	public void click(String elementName) throws MyException {
 		try {
 			
-			Thread.sleep(1000);
+			Thread.sleep(700);
 			
 			WebElement element = getWebElement(elementName);
 
-			wait.until(ExpectedConditions.elementToBeClickable(element));
+//			wait.until(ExpectedConditions.elementToBeClickable(element));
+			element = wait.until(ExpectedConditions.elementToBeClickable(by(page.getElement(elementName))));
 
 			// highlightElementUtil.highlightElement(element);
 
 			element.click();
 
+			Thread.sleep(500);
 //			click(getWebElement(elementName));
 			
 			logger.info("点击【" + elementName + "】");
@@ -248,11 +250,13 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 			
 			wait.until(ExpectedConditions.elementToBeClickable(webElement));
 
+
 			// highlightElementUtil.highlightElement(webElement);
 
+			logger.info("点击【" + webElement.getText().replaceAll("\n", "") + "】");
+			
 			webElement.click();
 
-			logger.info("点击【" + webElement.getText().replaceAll("\n", "") + "】");
 		} catch (WebDriverException e) {
 
 			logger.error("【" + webElement.toString() + "】点击失败！");

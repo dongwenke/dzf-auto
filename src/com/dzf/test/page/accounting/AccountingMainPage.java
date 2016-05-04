@@ -912,11 +912,11 @@ public class AccountingMainPage extends Handler {
 		try {
 			switchToDefaultContent();
 
-			// 检查填制凭证是否显示如果显示关闭该标签页
-			WebElement 标签栏 = getWebElement("全部标签页");
+//			// 检查填制凭证是否显示如果显示关闭该标签页
+//			WebElement 标签栏 = getWebElement("全部标签页");
 
 			try {
-				isDisplayed(标签栏.findElement(By.xpath(".//li/a[1]/span[1][text()='" + lableName + "']")));
+				isDisplayed(driver.findElement(By.xpath("//*[@id='main']/div[1]/div[3]/ul//span[text()='" + lableName + "']")));
 			} catch (NoSuchElementException e) {
 				Reporter.log("没有找到标签：" + lableName);
 				return false;
@@ -937,12 +937,12 @@ public class AccountingMainPage extends Handler {
 			if(!LableisOpened(lableName)){
 				Reporter.log(lableName+"没有打开");
 			}
-			// 检查填制凭证是否显示如果显示关闭该标签页
-			WebElement 标签栏 = getWebElement("全部标签页");
+//			// 检查填制凭证是否显示如果显示关闭该标签页
+//			WebElement 标签栏 = getWebElement("全部标签页");
 
 			try {
 				// 从标签栏中找是否有lableName的按钮
-				WebElement 按钮 = 标签栏.findElement(By.xpath("./a/span[text()='" + lableName + "']"));
+				WebElement 按钮 = driver.findElement(By.xpath(".//*[@id='main']/div[1]/div[3]/ul//span[text()='" + lableName + "']"));
 				
 				// 点击按钮上的关闭按钮
 				click(按钮.findElement(By.xpath("../../a[2]")));

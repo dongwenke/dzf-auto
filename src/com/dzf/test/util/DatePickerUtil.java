@@ -18,25 +18,7 @@ public class DatePickerUtil {
 	 */
 	public void choseDate(String date) {
 		try {
-			/*
-			 * title
-			 * //div[@class='calendar-header']/div[@class='calendar-title']/span
-			 * 上一年按钮
-			 * //div[@class='calendar-header']/div[contains(@class,'calendar-
-			 * prevyear')] 上一月按钮
-			 * //div[@class='calendar-header']/div[contains(@class,'calendar-
-			 * prevmonth')] 下一月按钮
-			 * //div[@class='calendar-header']/div[contains(@class,'calendar-
-			 * nextmonth')] 下一年按钮
-			 * //div[@class='calendar-header']/div[contains(@class,'calendar-
-			 * nextyear')]
-			 * 
-			 * 日 //div[@class='calendar-body']//tr/td[text()=3][not(contains(
-			 * 
-			 * @class,'calendar-other-month'))]
-			 */
-
-			String 年月 = datepicker.findElement(By.xpath("//div[@class='calendar-header']/div[@class='calendar-title']/span")).getText();
+			String 年月 = datepicker.findElement(By.xpath(".//div[@class='calendar-header']/div[@class='calendar-title']/span")).getText();
 
 			String 月 = 年月.split(" ")[0];
 			String 年 = 年月.substring(年月.length() - 4, 年月.length());
@@ -52,12 +34,12 @@ public class DatePickerUtil {
 			if (z >= 0) {
 				for (int i = 0; i < z; i++) {
 					Thread.sleep(200);
-					datepicker.findElement(By.xpath("//div[@class='calendar-header']/div[contains(@class,'calendar-nextyear')]")).click();
+					datepicker.findElement(By.xpath(".//div[@class='calendar-header']/div[contains(@class,'calendar-nextyear')]")).click();
 				}
 			} else {
 				for (int i = 0; i < (-z); i++) {
 					Thread.sleep(200);
-					datepicker.findElement(By.xpath("//div[@class='calendar-header']/div[contains(@class,'calendar-prevyear')]")).click();
+					datepicker.findElement(By.xpath(".//div[@class='calendar-header']/div[contains(@class,'calendar-prevyear')]")).click();
 				}
 			}
 
@@ -66,12 +48,12 @@ public class DatePickerUtil {
 			if (y >= 0) {
 				for (int i = 0; i < y; i++) {
 					Thread.sleep(200);
-					datepicker.findElement(By.xpath("//div[@class='calendar-header']/div[contains(@class,'calendar-nextmonth')]")).click();
+					datepicker.findElement(By.xpath(".//div[@class='calendar-header']/div[contains(@class,'calendar-nextmonth')]")).click();
 				}
 			} else {
 				for (int i = 0; i < (-y); i++) {
 					Thread.sleep(200);
-					datepicker.findElement(By.xpath("//div[@class='calendar-header']/div[contains(@class,'calendar-prevmonth')]")).click();
+					datepicker.findElement(By.xpath(".//div[@class='calendar-header']/div[contains(@class,'calendar-prevmonth')]")).click();
 				}
 			}
 
@@ -82,7 +64,7 @@ public class DatePickerUtil {
 				day = day.substring(1);
 			}
 
-			datepicker.findElement(By.xpath("//div[@class='calendar-body']//tr/td[text()=" + day + "][not(contains(@class,'calendar-other-month'))]")).click();
+			datepicker.findElement(By.xpath(".//div[@class='calendar-body']//tr/td[text()=" + day + "][not(contains(@class,'calendar-other-month'))]")).click();
 
 		} catch (Exception e) {
 
