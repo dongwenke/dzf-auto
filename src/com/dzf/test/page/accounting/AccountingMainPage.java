@@ -1,11 +1,6 @@
 package com.dzf.test.page.accounting;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.testng.Reporter;
 
 import com.dzf.test.model.Handler;
@@ -14,23 +9,67 @@ import com.dzf.test.util.MyException;
 import com.dzf.test.util.XMLUtil;
 
 public class AccountingMainPage extends Handler {
+	private final String xmlfile = "./config/page/accounting/" + this.getClass().getSimpleName() + ".xml";
 
-	public AccountingMainPage() {
+	public AccountingMainPage() throws Exception {
 		super();
 
-		try {
-			page = XMLUtil.convert("./config/page/accounting/" + this.getClass().getSimpleName() + ".xml",
-					Page.class.getName());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		page = XMLUtil.convert(xmlfile, Page.class.getName());
 	}
 
 	public String getUserInfo() throws MyException {
-		switchToDefaultContent();
-		return getText("用户信息");
+		try {
+			switchToDefaultContent();
+			
+			return getText("用户信息");
+		} catch (MyException e) {
+			Reporter.log("获取用户信息失败！");
+			throw e;
+		}
 	}
 
+	public boolean quickSwitch() throws MyException, InterruptedException {
+		boolean result = false;
+		try {
+			switchToDefaultContent();
+	
+			Reporter.log("点击快速切换按钮");
+			click("快速切换按钮");
+	
+			Thread.sleep(1000);
+	
+			Reporter.log("点击日期选择按钮");
+			click("快速切换-日期选择按钮");
+	
+			Thread.sleep(1000);
+	
+			Reporter.log("点击年月选择按钮");
+			click("快速切换-年月选择按钮");
+	
+			Thread.sleep(1000);
+	
+			Reporter.log("点击十二月");
+			click("快速切换-十二月");
+	
+			Thread.sleep(1000);
+	
+			Reporter.log("点击31号");
+			click("快速切换-31号");
+	
+			Thread.sleep(1000);
+	
+			Reporter.log("点击确定按钮");
+			click("快速切换-确定按钮");
+	
+			Thread.sleep(1500);
+	
+		} catch (WebDriverException e) {
+			throw e;
+		}
+		return result;
+	}
+
+	@Deprecated
 	public boolean open填制凭证() throws InterruptedException, MyException {
 		boolean result = false;
 
@@ -58,6 +97,7 @@ public class AccountingMainPage extends Handler {
 		return result;
 	}
 
+	@Deprecated
 	public boolean open凭证管理() throws InterruptedException, MyException {
 		boolean result = false;
 
@@ -83,6 +123,7 @@ public class AccountingMainPage extends Handler {
 
 	}
 
+	@Deprecated
 	public boolean open科目期初余额() throws InterruptedException, MyException {
 
 		try {
@@ -120,6 +161,7 @@ public class AccountingMainPage extends Handler {
 
 	}
 
+	@Deprecated
 	public boolean open期末处理() throws InterruptedException, MyException {
 
 		boolean result = false;
@@ -154,6 +196,7 @@ public class AccountingMainPage extends Handler {
 		return result;
 	}
 
+	@Deprecated
 	public boolean open总账期末结账() throws InterruptedException, MyException {
 
 		boolean result = false;
@@ -189,47 +232,7 @@ public class AccountingMainPage extends Handler {
 		return result;
 	}
 
-	public boolean quickSwitch() throws MyException, InterruptedException {
-		boolean result = false;
-		try {
-			switchToDefaultContent();
-
-			Reporter.log("点击快速切换按钮");
-			click("快速切换按钮");
-
-			Thread.sleep(1000);
-
-			Reporter.log("点击日期选择按钮");
-			click("快速切换-日期选择按钮");
-
-			Thread.sleep(1000);
-
-			Reporter.log("点击年月选择按钮");
-			click("快速切换-年月选择按钮");
-
-			Thread.sleep(1000);
-
-			Reporter.log("点击十二月");
-			click("快速切换-十二月");
-
-			Thread.sleep(1000);
-
-			Reporter.log("点击31号");
-			click("快速切换-31号");
-
-			Thread.sleep(1000);
-
-			Reporter.log("点击确定按钮");
-			click("快速切换-确定按钮");
-
-			Thread.sleep(1500);
-
-		} catch (WebDriverException e) {
-			throw e;
-		}
-		return result;
-	}
-
+	@Deprecated
 	public boolean open会计科目() throws MyException, InterruptedException {
 		boolean result = false;
 		try {
@@ -265,6 +268,7 @@ public class AccountingMainPage extends Handler {
 		return result;
 	}
 
+	@Deprecated
 	public boolean open汇率档案() throws MyException, InterruptedException {
 		boolean result = false;
 		try {
@@ -300,6 +304,7 @@ public class AccountingMainPage extends Handler {
 		return result;
 	}
 
+	@Deprecated
 	public void open发生额及余额表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -327,6 +332,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open科目汇总表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -353,6 +359,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open科目明细账() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -380,6 +387,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open科目总账() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -407,6 +415,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open数量金额明细账() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -434,6 +443,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open数量金额总账() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -461,6 +471,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open现金银行日记账() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -488,6 +499,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open序时账() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -513,6 +525,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open利润表季报() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -538,6 +551,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open利润表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -562,6 +576,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1000);
 	}
 
+	@Deprecated
 	public void open收入支出表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -585,6 +600,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open现金流量表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -609,6 +625,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open业务活动表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -632,6 +649,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open增值税和营业税月度申报对比表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -655,6 +673,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open资产负债表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -678,6 +697,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open常用凭证模板() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -701,6 +721,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open卡片管理() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -724,6 +745,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open原值变更() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -747,6 +769,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open资产清理() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -770,6 +793,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open工作量管理() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -793,6 +817,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open折旧汇总表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -816,6 +841,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open资产明细账() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -839,6 +865,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open资产与总账对账表() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -862,6 +889,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open资产总账() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -885,6 +913,7 @@ public class AccountingMainPage extends Handler {
 		Thread.sleep(1500);
 	}
 
+	@Deprecated
 	public void open资产折旧明细() throws InterruptedException, MyException {
 
 		switchToDefaultContent();
@@ -912,11 +941,12 @@ public class AccountingMainPage extends Handler {
 		try {
 			switchToDefaultContent();
 
-//			// 检查填制凭证是否显示如果显示关闭该标签页
-//			WebElement 标签栏 = getWebElement("全部标签页");
+			// // 检查填制凭证是否显示如果显示关闭该标签页
+			// WebElement 标签栏 = getWebElement("全部标签页");
 
 			try {
-				isDisplayed(driver.findElement(By.xpath("//*[@id='main']/div[1]/div[3]/ul//span[text()='" + lableName + "']")));
+				isDisplayed(driver
+						.findElement(By.xpath("//*[@id='main']/div[1]/div[3]/ul//span[text()='" + lableName + "']")));
 			} catch (NoSuchElementException e) {
 				Reporter.log("没有找到标签：" + lableName);
 				return false;
@@ -934,16 +964,17 @@ public class AccountingMainPage extends Handler {
 		try {
 			switchToDefaultContent();
 
-			if(!LableisOpened(lableName)){
-				Reporter.log(lableName+"没有打开");
+			if (!LableisOpened(lableName)) {
+				Reporter.log(lableName + "没有打开");
 			}
-//			// 检查填制凭证是否显示如果显示关闭该标签页
-//			WebElement 标签栏 = getWebElement("全部标签页");
+			// // 检查填制凭证是否显示如果显示关闭该标签页
+			// WebElement 标签栏 = getWebElement("全部标签页");
 
 			try {
 				// 从标签栏中找是否有lableName的按钮
-				WebElement 按钮 = driver.findElement(By.xpath(".//*[@id='main']/div[1]/div[3]/ul//span[text()='" + lableName + "']"));
-				
+				WebElement 按钮 = driver
+						.findElement(By.xpath(".//*[@id='main']/div[1]/div[3]/ul//span[text()='" + lableName + "']"));
+
 				// 点击按钮上的关闭按钮
 				click(按钮.findElement(By.xpath("../../a[2]")));
 

@@ -1,14 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="scenery2"
-           tests="2"
-           failures="0"
+           tests="28"
+           failures="1"
            errors="0"
-           skipped="0"
-           time="288.664">
+           skipped="18"
+           time="983.075">
   <properties />
+            <testcase name="test凭证管理" time="12.252" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="鼠标移动到：凭证管理失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 鼠标移动到：凭证管理失败！
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:403)
+  com.dzf.test.page.accounting.AccountingMainPage.open凭证管理(AccountingMainPage.java:69)
+  com.dzf.test.testscenery.TestScenery2.test凭证管理(TestScenery2.java:329)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Command duration or timeout: 16 milliseconds
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 50ccf856-3b2d-4dfb-abe5-4f3fe8724d8f
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+  org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+  org.openqa.selenium.remote.RemoteExecuteMethod.execute(RemoteExecuteMethod.java:34)
+  org.openqa.selenium.remote.RemoteMouse.mouseMove(RemoteMouse.java:88)
+  org.openqa.selenium.interactions.MoveMouseAction.perform(MoveMouseAction.java:35)
+  org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:31)
+  org.openqa.selenium.interactions.Actions.perform(Actions.java:367)
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:397)
+  com.dzf.test.page.accounting.AccountingMainPage.open凭证管理(AccountingMainPage.java:69)
+  com.dzf.test.testscenery.TestScenery2.test凭证管理(TestScenery2.java:329)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: driver.version: unknown
+  <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous3239317062209450664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10961)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous3239317062209450664webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous3239317062209450664webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+  <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous3239317062209450664webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+]]>
+      </failure>
+
+          </testcase>
   
+            <testcase name="test期末处理" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test资产与总账对账表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test现金银行日记账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test数量金额总账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test资产明细账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test序时账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test科目总账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test增值税和营业税月度申报对比表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test利润表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test发生额及余额表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test利润表季报" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test资产负债表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test折旧汇总表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test数量金额明细帐" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test科目明细帐" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test资产总账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test科目汇总表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
+            <testcase name="test资产折旧明细" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+          <skipped />
+    </testcase>
   
-            <testcase name="test期中录入固定资产卡片" time="141.966" classname="com.dzf.test.testscenery.TestScenery2" />
-                <testcase name="test期初录入固定资产卡片" time="146.698" classname="com.dzf.test.testscenery.TestScenery2" />
+            <testcase name="test期初试算平衡" time="70.903" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test汇率档案" time="50.383" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test期初录入固定资产卡片" time="424.093" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test期中录入固定资产卡片" time="139.945" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test会计科目" time="65.804" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test现金流量表" time="27.170" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test期初试算平衡其它按钮" time="35.020" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test填制凭证" time="33.282" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test填制凭证其它功能" time="124.223" classname="com.dzf.test.testscenery.TestScenery2" />
       
 </testsuite>

@@ -184,48 +184,60 @@ public class 凭证管理Page extends Handler {
 
 		click("开始年份选择按钮");
 
-		// 年份显示是2016,2015,2014
-		List<WebElement> elementList = null;
-		elementList = getWebElement("开始年份选择悬浮层").findElements(By.tagName("div"));
-		for (WebElement webElement : elementList) {
-			if (getText(webElement).equals(beginDate.split("-")[0])) {
-				click(webElement);
-				break;
-			}
-		}
+		click(getWebElement("开始年份选择悬浮层").findElement(By.xpath("./div[text()='" + beginDate.split("-")[0] + "']")));
+
+		// // 年份显示是2016,2015,2014
+//		List<WebElement> elementList = null;
+		// elementList =
+		// getWebElement("开始年份选择悬浮层").findElements(By.xpath("./div[text()='"+beginDate.split("-")[0]+"']"));
+		// for (WebElement webElement : elementList) {
+		// if (getText(webElement).equals(beginDate.split("-")[0])) {
+		// click(webElement);
+		// break;
+		// }
+		// }
 
 		click("开始月份选择按钮");
 
-		// 年份显示是2016,2015
-		elementList = getWebElement("开始月份选择悬浮层").findElements(By.tagName("div"));
-		for (WebElement webElement : elementList) {
-			if (getText(webElement).equals(beginDate.split("-")[1])) {
-				click(webElement);
-				break;
-			}
-		}
+		click(getWebElement("开始月份选择悬浮层").findElement(By.xpath("./div[text()='" + beginDate.split("-")[1] + "']")));
+
+		// // 年份显示是2016,2015
+		// elementList =
+		// getWebElement("开始月份选择悬浮层").findElements(By.tagName("div"));
+		// for (WebElement webElement : elementList) {
+		// if (getText(webElement).equals(beginDate.split("-")[1])) {
+		// click(webElement);
+		// break;
+		// }
+		// }
 
 		click("结束年份选择按钮");
 
-		// 年份显示是2016,2015
-		elementList = getWebElement("结束年份选择悬浮层").findElements(By.tagName("div"));
-		for (WebElement webElement : elementList) {
-			if (getText(webElement).equals(endDate.split("-")[0])) {
-				click(webElement);
-				break;
-			}
-		}
+		click(getWebElement("结束年份选择悬浮层").findElement(By.xpath("./div[text()='" + endDate.split("-")[0] + "']")));
+
+		// // 年份显示是2016,2015
+		// elementList =
+		// getWebElement("结束年份选择悬浮层").findElements(By.tagName("div"));
+		// for (WebElement webElement : elementList) {
+		// if (getText(webElement).equals(endDate.split("-")[0])) {
+		// click(webElement);
+		// break;
+		// }
+		// }
 
 		click("结束月份选择按钮");
 
-		// 年份显示是2016,2015
-		elementList = getWebElement("结束月份选择悬浮层").findElements(By.tagName("div"));
-		for (WebElement webElement : elementList) {
-			if (getText(webElement).equals(endDate.split("-")[1])) {
-				click(webElement);
-				break;
-			}
-		}
+		click(getWebElement("结束月份选择悬浮层").findElement(By.xpath("./div[text()='" + endDate.split("-")[1] + "']")));
+
+		// // 年份显示是2016,2015
+		// elementList =
+		// getWebElement("结束月份选择悬浮层").findElements(By.tagName("div"));
+		// for (WebElement webElement : elementList) {
+		// if (getText(webElement).equals(endDate.split("-")[1])) {
+		// click(webElement);
+		// break;
+		// }
+		// }
 
 		return false;
 	}

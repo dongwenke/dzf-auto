@@ -1,5 +1,7 @@
 package com.dzf.test.page.accounting.结账办理;
 
+import org.testng.Reporter;
+
 import com.dzf.test.model.Handler;
 import com.dzf.test.model.Page;
 import com.dzf.test.page.accounting.AccountingMainPage;
@@ -57,7 +59,12 @@ public class 期末总账结账Page extends Handler {
 
 	}
 
-	private String getCompany() throws MyException {
+	private String getCompany() throws Exception {
+		try{
 		return new AccountingMainPage().getText("公司名称");
+		}catch(MyException e){
+			Reporter.log("获取公司名称失败！");
+			throw e;
+		}
 	}
 }

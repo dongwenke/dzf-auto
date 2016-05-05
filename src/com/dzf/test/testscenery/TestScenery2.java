@@ -18,6 +18,11 @@ import com.dzf.test.page.accounting.基础设置_总账.科目期初余额Page;
 import com.dzf.test.page.accounting.科目账表.*;
 import com.dzf.test.page.accounting.结账办理.期末处理Page;
 import com.dzf.test.page.accounting.财务账表.*;
+import com.dzf.test.page.accounting.资产报表.折旧汇总表Page;
+import com.dzf.test.page.accounting.资产报表.资产与总账对账表Page;
+import com.dzf.test.page.accounting.资产报表.资产总账Page;
+import com.dzf.test.page.accounting.资产报表.资产折旧明细Page;
+import com.dzf.test.page.accounting.资产报表.资产明细账Page;
 import com.dzf.test.page.accounting.资产管理.卡片管理Page;
 import com.dzf.test.util.ILogUtil;
 import com.dzf.test.util.MyException;
@@ -46,6 +51,12 @@ public class TestScenery2 implements ILogUtil {
 	private 数量金额总账Page 数量金额总账;
 	private 现金银行日记账Page 现金银行日记账;
 	private 序时账Page 序时账;
+	
+	private 折旧汇总表Page 折旧汇总表;
+	private 资产明细账Page 资产明细账;
+	private 资产与总账对账表Page 资产与总账对账表;
+	private 资产折旧明细Page 资产折旧明细;
+	private 资产总账Page 资产总账;
 
 	private 汇率档案Page 汇率档案;
 	private 会计科目Page 会计科目;
@@ -76,6 +87,12 @@ public class TestScenery2 implements ILogUtil {
 		科目汇总表 = new 科目汇总表Page();
 		数量金额明细帐 = new 数量金额明细账Page();
 		数量金额总账 = new 数量金额总账Page();
+		
+		折旧汇总表 = new 折旧汇总表Page();
+		资产明细账 = new 资产明细账Page();
+		资产与总账对账表 = new 资产与总账对账表Page();
+		资产折旧明细 = new 资产折旧明细Page();
+		资产总账 = new 资产总账Page();
 
 		汇率档案 = new 汇率档案Page();
 		会计科目 = new 会计科目Page();
@@ -115,7 +132,7 @@ public class TestScenery2 implements ILogUtil {
 	@Parameters({ "币种", "汇率", "折算模式", "是否浮动汇率", "备注" })
 	public void test汇率档案(String currency, String rate, String translationMode, String isFloateRate, String comment)
 			throws InterruptedException, MyException {
-		mainPage.open汇率档案();
+		mainPage.openFrame("汇率档案");
 		汇率档案.add(currency, rate, translationMode, isFloateRate, comment);
 
 		汇率档案.modify(currency, rate, translationMode, isFloateRate, comment);
@@ -127,7 +144,7 @@ public class TestScenery2 implements ILogUtil {
 	@Test()
 	@Parameters({ "科目", "币别" })
 	public void test会计科目(String subject, String currency) throws InterruptedException, MyException {
-		mainPage.open会计科目();
+		mainPage.openFrame("会计科目");
 		会计科目.modify(subject, currency);
 	}
 
@@ -170,7 +187,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test期初试算平衡(String subject1, String currency1, String project1, String num1, String subject2,
 			String currency2, String project2, String num2) throws InterruptedException, MyException {
 		try {
-			mainPage.open科目期初余额();
+			mainPage.openFrame("科目期初余额");
 			科目期初余额.modify(subject1, currency1, num1, project1);
 			科目期初余额.modify(subject2, currency2, num2, project2);
 
@@ -190,7 +207,7 @@ public class TestScenery2 implements ILogUtil {
 	@Test
 	public void test期初试算平衡其它按钮() throws InterruptedException, MyException {
 		try {
-			mainPage.open科目期初余额();
+			mainPage.openFrame("科目期初余额");
 
 			科目期初余额.refresh();
 
@@ -209,7 +226,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test填制凭证(String summary, String subject1, String rate, String original, String num, String subject2)
 			throws InterruptedException, MyException {
 		try {
-			mainPage.open填制凭证();
+			mainPage.openFrame("填制凭证");
 			填制凭证.saveVoucher(summary, subject1, rate, original, num, subject2);
 
 		} catch (MyException e) {
@@ -225,7 +242,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test填制凭证其它功能() throws InterruptedException, MyException {
 		try {
 
-			mainPage.open填制凭证();
+			mainPage.openFrame("填制凭证");
 			填制凭证.billImage();
 
 			Thread.sleep(1000);
@@ -309,7 +326,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test凭证管理(String byDateOrPeriod, String beginDate, String endDate)
 			throws InterruptedException, MyException {
 		try {
-			mainPage.open凭证管理();
+			mainPage.openFrame("凭证管理");
 
 			凭证管理.refresh();
 
@@ -345,7 +362,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test期末处理(String beginDate, String endDate) throws InterruptedException, MyException {
 
 		try {
-			mainPage.open期末处理();
+			mainPage.openFrame("期末处理");
 			期末处理.search(null, beginDate, endDate, false, false);
 
 			期末处理.selectAll();
@@ -373,7 +390,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test科目总账() throws InterruptedException, MyException {
 
 		try {
-			mainPage.open科目总账();
+			mainPage.openFrame("科目总账");
 			科目总账.search(null, null, null, null, null, null, null, null, false, false, null);
 			科目总账.print();
 
@@ -390,7 +407,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test科目明细帐() throws InterruptedException, MyException {
 
 		try {
-			mainPage.open科目明细账();
+			mainPage.openFrame("科目明细账");
 			科目明细帐.search(null, null, null, null, null, null, null, null, true, true, null);
 			科目明细帐.print();
 
@@ -407,7 +424,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test现金银行日记账() throws InterruptedException, MyException {
 
 		try {
-			mainPage.open现金银行日记账();
+			mainPage.openFrame("现金银行日记账");
 			现金银行日记账.search(null, null, null, null, null, null, null, null, true, true, null);
 			现金银行日记账.print();
 
@@ -424,7 +441,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test发生额及余额表() throws InterruptedException, MyException {
 
 		try {
-			mainPage.open发生额及余额表();
+			mainPage.openFrame("发生额及余额表");
 			发生额及余额表.search(null, null, null, null, null, null, null, null, true, false, null);
 			发生额及余额表.print();
 
@@ -440,7 +457,7 @@ public class TestScenery2 implements ILogUtil {
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test序时账() throws InterruptedException, MyException {
 		try {
-			mainPage.open序时账();
+			mainPage.openFrame("序时账");
 			序时账.search(null, null, null, null, null, null, null, null, false, false, null);
 			序时账.print();
 
@@ -456,7 +473,7 @@ public class TestScenery2 implements ILogUtil {
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test科目汇总表() throws InterruptedException, MyException {
 		try {
-			mainPage.open科目汇总表();
+			mainPage.openFrame("科目汇总表");
 			科目汇总表.search(null, null, null, null, null, null, null, null, false, false, null);
 			科目汇总表.print();
 
@@ -472,7 +489,7 @@ public class TestScenery2 implements ILogUtil {
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test数量金额明细帐() throws InterruptedException, MyException {
 		try {
-			mainPage.open数量金额明细账();
+			mainPage.openFrame("数量金额明细账");
 			数量金额明细帐.search(null, null, null, null, null, null, null, null, false, false, null);
 			数量金额明细帐.print();
 
@@ -488,7 +505,7 @@ public class TestScenery2 implements ILogUtil {
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test数量金额总账() throws InterruptedException, MyException {
 		try {
-			mainPage.open数量金额总账();
+			mainPage.openFrame("数量金额总账");
 			数量金额总账.search(null, null, null, null, null, null, null, null, false, false, null);
 			数量金额总账.print();
 
@@ -504,7 +521,7 @@ public class TestScenery2 implements ILogUtil {
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test利润表季报() throws InterruptedException, MyException {
 		try {
-			mainPage.open利润表季报();
+			mainPage.openFrame("利润表季报");
 			利润表季报.search(null, null, null, true);
 			利润表季报.print();
 
@@ -520,7 +537,7 @@ public class TestScenery2 implements ILogUtil {
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test利润表() throws InterruptedException, MyException {
 		try {
-			mainPage.open利润表();
+			mainPage.openFrame("利润表");
 			利润表.search(null, null, false);
 			利润表.print();
 
@@ -536,10 +553,10 @@ public class TestScenery2 implements ILogUtil {
 	/*
 	 * 13小企业不包含收入支出表
 	 */
-	@Test(enabled = false)
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test收入支出表() throws InterruptedException, MyException {
 		try {
-			mainPage.open收入支出表();
+			mainPage.openFrame("收入支出表");
 			收入支出表.search(null, null, false);
 			收入支出表.print();
 
@@ -552,10 +569,10 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test
+	@Test(dependsOnMethods = { "test期末处理" })
 	public void test现金流量表() throws InterruptedException, MyException {
 		try {
-			mainPage.open现金流量表();
+			mainPage.openFrame("现金流量表");
 			现金流量表.search(null, null);
 			现金流量表.print();
 
@@ -575,7 +592,7 @@ public class TestScenery2 implements ILogUtil {
 	@Test(dependsOnMethods = { "test期末处理" }, enabled = false)
 	public void test业务活动表() throws InterruptedException, MyException {
 		try {
-			mainPage.open业务活动表();
+			mainPage.openFrame("业务活动表");
 			业务活动表.search(null, null, false);
 			业务活动表.print();
 
@@ -592,7 +609,7 @@ public class TestScenery2 implements ILogUtil {
 	public void test增值税和营业税月度申报对比表() throws InterruptedException, MyException {
 
 		try {
-			mainPage.open增值税和营业税月度申报对比表();
+			mainPage.openFrame("增值税和营业税月度申报对比表");
 			增值税和营业税月度申报对比表.search(null, null);
 			增值税和营业税月度申报对比表.print();
 		} catch (MyException e) {
@@ -606,13 +623,88 @@ public class TestScenery2 implements ILogUtil {
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test资产负债表() throws InterruptedException, MyException {
 		try {
-			mainPage.open资产负债表();
+			mainPage.openFrame("资产负债表");
 			资产负债表.search(null, null, false, false);
 			资产负债表.print();
 		} catch (MyException e) {
-			logger.error("查询资产负债表！", e);
+			logger.error("查询资产负债表失败！", e);
 			Reporter.log(e.getMessage());
-			Reporter.log("查询资产负债表");
+			Reporter.log("查询资产负债表失败！");
+			throw e;
+		}
+
+	}
+	
+	@Test(dependsOnMethods = { "test期末处理" })
+	public void test折旧汇总表() throws InterruptedException, MyException {
+		try {
+			mainPage.openFrame("折旧汇总表");
+			折旧汇总表.search("2016-01", null, null, null, null);
+			
+		} catch (MyException e) {
+			logger.error("查询折旧汇总表失败！", e);
+			Reporter.log(e.getMessage());
+			Reporter.log("查询折旧汇总表失败");
+			throw e;
+		}
+
+	}
+	
+	@Test(dependsOnMethods = { "test期末处理" })
+	public void test资产明细账() throws InterruptedException, MyException {
+		try {
+			mainPage.openFrame("资产明细账");
+			资产明细账.search("2016-01-01", "2018-01-01", null, null, null);
+			
+		} catch (MyException e) {
+			logger.error("查询资产明细账失败！", e);
+			Reporter.log(e.getMessage());
+			Reporter.log("查询资产明细账失败");
+			throw e;
+		}
+
+	}
+	
+	@Test(dependsOnMethods = { "test期末处理" })
+	public void test资产与总账对账表() throws InterruptedException, MyException {
+		try {
+			mainPage.openFrame("资产与总账对账表");
+			资产与总账对账表.search("2016-01-01");
+			
+		} catch (MyException e) {
+			logger.error("查询资产与总账对账表失败！", e);
+			Reporter.log(e.getMessage());
+			Reporter.log("查询资产与总账对账表失败");
+			throw e;
+		}
+
+	}
+	
+	@Test(dependsOnMethods = { "test期末处理" })
+	public void test资产折旧明细() throws InterruptedException, MyException {
+		try {
+			mainPage.openFrame("资产折旧明细");
+			资产折旧明细.search("2016-01", "2016-12", null, null, null);
+			
+		} catch (MyException e) {
+			logger.error("查询资产折旧明细失败！", e);
+			Reporter.log(e.getMessage());
+			Reporter.log("查询资产折旧明细失败");
+			throw e;
+		}
+
+	}
+	
+	@Test(dependsOnMethods = { "test期末处理" })
+	public void test资产总账() throws InterruptedException, MyException {
+		try {
+			mainPage.openFrame("资产总账");
+			资产总账.search("2016-01-01", "2018-01-01", null);
+			
+		} catch (MyException e) {
+			logger.error("查询资产总账失败！", e);
+			Reporter.log(e.getMessage());
+			Reporter.log("查询资产总账失败！");
 			throw e;
 		}
 

@@ -17,19 +17,19 @@
 	<element id="1" name="开始年份选择按钮" method="xpath"
 		value=".//*[@id='contid1']/div[1]/div[2]/font[1]/span/span/a"></element>
 	<element id="1" name="开始年份选择悬浮层" method="xpath"
-		value="html/body/div[8]/div"></element>
+		value="(//div[child::div[text()='2016' and starts-with(@id,'_easyui_combobox') and contains(@class,'combobox-item')]])[1]"></element>
 	<element id="1" name="开始月份选择按钮" method="xpath"
 		value=".//*[@id='contid1']/div[1]/div[2]/font[2]/span/span/a"></element>
 	<element id="1" name="开始月份选择悬浮层" method="xpath"
-		value="html/body/div[9]/div"></element>
+		value="(//div[child::div[text()='01' and starts-with(@id,'_easyui_combobox') and contains(@class,'combobox-item')]])[1]"></element>
 	<element id="1" name="结束年份选择按钮" method="xpath"
 		value=".//*[@id='contid1']/div[1]/div[2]/font[4]/span/span/a"></element>
 	<element id="1" name="结束年份选择悬浮层" method="xpath"
-		value="html/body/div[10]/div"></element>
+		value="(//div[child::div[text()='2016' and starts-with(@id,'_easyui_combobox') and contains(@class,'combobox-item')]])[2]"></element>
 	<element id="1" name="结束月份选择按钮" method="xpath"
 		value=".//*[@id='contid1']/div[1]/div[2]/font[5]/span/span/a"></element>
 	<element id="1" name="结束月份选择悬浮层" method="xpath"
-		value="html/body/div[11]/div"></element>
+		value="(//div[child::div[text()='01' and starts-with(@id,'_easyui_combobox') and contains(@class,'combobox-item')]])[2]"></element>
 	<element id="1" name="查询面板-开始凭证号输入框" method="xpath"
 		value=".//*[@id='contid1']/div[2]/font[1]/span/input[1]"></element>
 	<element id="1" name="查询面板-结束凭证号输入框" method="xpath"
