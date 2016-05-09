@@ -72,18 +72,18 @@ public class WebTableUtil {
 	 */
 	public WebElement getTr(String keyword) throws MyException {
 		try {
-			List<WebElement> webElementList = webTable.findElements(By.xpath("//tr[contains(.,'" + keyword + "')]"));
+//			List<WebElement> webElementList = webTable.findElements(By.xpath("//tr[*='" + keyword + "']"));
+//
+//			// Reporter.log("获取" + elementName + "所在的行");
+//			// 遍历
+//			for (WebElement webElement : webElementList) {
+//				if (webElement.findElements(By.tagName("tr")).size() == 0) {
+//					// Reporter.log("获取成功！");
+//					return webElement;
+//				}
+//			}
 
-			// Reporter.log("获取" + elementName + "所在的行");
-			// 遍历
-			for (WebElement webElement : webElementList) {
-				if (webElement.findElements(By.tagName("tr")).size() == 0) {
-					// Reporter.log("获取成功！");
-					return webElement;
-				}
-			}
-
-			return null;
+			return webTable.findElement(By.xpath("//tr[*='" + keyword + "']"));
 		} catch (WebDriverException e) {
 			throw new MyException("没有找到包含：" + keyword + "的行", e);
 		}

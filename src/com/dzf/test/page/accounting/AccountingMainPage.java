@@ -20,7 +20,7 @@ public class AccountingMainPage extends Handler {
 	public String getUserInfo() throws MyException {
 		try {
 			switchToDefaultContent();
-			
+
 			return getText("用户信息");
 		} catch (MyException e) {
 			Reporter.log("获取用户信息失败！");
@@ -32,37 +32,37 @@ public class AccountingMainPage extends Handler {
 		boolean result = false;
 		try {
 			switchToDefaultContent();
-	
-			Reporter.log("点击快速切换按钮");
+
+			// Reporter.log("点击快速切换按钮");
 			click("快速切换按钮");
-	
+
 			Thread.sleep(1000);
-	
-			Reporter.log("点击日期选择按钮");
+
+			// Reporter.log("点击日期选择按钮");
 			click("快速切换-日期选择按钮");
-	
+
 			Thread.sleep(1000);
-	
-			Reporter.log("点击年月选择按钮");
+
+			// Reporter.log("点击年月选择按钮");
 			click("快速切换-年月选择按钮");
-	
+
 			Thread.sleep(1000);
-	
-			Reporter.log("点击十二月");
+
+			// Reporter.log("点击十二月");
 			click("快速切换-十二月");
-	
+
 			Thread.sleep(1000);
-	
-			Reporter.log("点击31号");
+
+			// Reporter.log("点击31号");
 			click("快速切换-31号");
-	
+
 			Thread.sleep(1000);
-	
-			Reporter.log("点击确定按钮");
+
+			// Reporter.log("点击确定按钮");
 			click("快速切换-确定按钮");
-	
+
 			Thread.sleep(1500);
-	
+
 		} catch (WebDriverException e) {
 			throw e;
 		}
@@ -137,14 +137,14 @@ public class AccountingMainPage extends Handler {
 			if (!isDisplayed("凭证管理")) {
 				// Reporter.log("总账没有打开");
 
-				Reporter.log("点击总账");
+				// Reporter.log("点击总账");
 				click("总账");
 			}
 
-			Reporter.log("鼠标移动到基础设置");
+			// Reporter.log("鼠标移动到基础设置");
 			mouseMoveTo("基础设置-总账");
 
-			Reporter.log("点击悬浮菜单-科目期初余额");
+			// Reporter.log("点击悬浮菜单-科目期初余额");
 			click("科目期初余额悬浮");
 
 			// Reporter.log("鼠标移动到logo上");
@@ -168,24 +168,24 @@ public class AccountingMainPage extends Handler {
 		try {
 			switchToDefaultContent();
 			// 关闭科目期初余额
-			Reporter.log("关闭期末处理frame");
+			// Reporter.log("关闭期末处理frame");
 			closeLable("期末处理");
 
-			Reporter.log("检查凭证管理是否显示");
+			// Reporter.log("检查凭证管理是否显示");
 			if (!isDisplayed("凭证管理")) {
-				Reporter.log("凭证管理没有显示");
+				// Reporter.log("凭证管理没有显示");
 
-				Reporter.log("点击总账");
+				// Reporter.log("点击总账");
 				click("总账");
 			}
 
-			Reporter.log("鼠标移动到结账办理");
+			// Reporter.log("鼠标移动到结账办理");
 			mouseMoveTo("结账办理");
 
-			Reporter.log("点击悬浮菜单-期末处理");
+			// Reporter.log("点击悬浮菜单-期末处理");
 			click("期末处理悬浮");
 
-			Reporter.log("鼠标移动到logo");
+			// Reporter.log("鼠标移动到logo");
 			mouseMoveTo("logo");
 			Thread.sleep(800);
 
@@ -203,23 +203,23 @@ public class AccountingMainPage extends Handler {
 		try {
 			switchToDefaultContent();
 
-			Reporter.log("关闭总账期末结账");
+			// Reporter.log("关闭总账期末结账");
 			closeLable("总账期末结账");
 
-			Reporter.log("检查凭证管理是否显示");
+			// Reporter.log("检查凭证管理是否显示");
 			if (!isDisplayed("凭证管理")) {
-				Reporter.log("凭证管理没有显示");
+				// Reporter.log("凭证管理没有显示");
 
-				Reporter.log("点击总账");
+				// Reporter.log("点击总账");
 				click("总账");
 			}
-			Reporter.log("鼠标移动到结账办理");
+			// Reporter.log("鼠标移动到结账办理");
 			mouseMoveTo("结账办理");
 
-			Reporter.log("点击悬浮菜单-总账期末结账");
+			// Reporter.log("点击悬浮菜单-总账期末结账");
 			click("总账期末结账悬浮");
 
-			Reporter.log("鼠标移动到logo");
+			// Reporter.log("鼠标移动到logo");
 			mouseMoveTo("logo");
 
 			Thread.sleep(800);
@@ -238,24 +238,24 @@ public class AccountingMainPage extends Handler {
 		try {
 			switchToDefaultContent();
 
-			Reporter.log("关闭会计科目");
+			// Reporter.log("关闭会计科目");
 			closeLable("会计科目");
 
-			Reporter.log("检查凭证管理是否显示");
+			// Reporter.log("检查凭证管理是否显示");
 			if (!isDisplayed("凭证管理")) {
-				Reporter.log("凭证管理未显示");
+				// Reporter.log("凭证管理未显示");
 
-				Reporter.log("点击总账");
+				// Reporter.log("点击总账");
 				click("总账");
 			}
 
-			Reporter.log("鼠标移动到基础设置");
+			// Reporter.log("鼠标移动到基础设置");
 			mouseMoveTo("基础设置-总账");
 
-			Reporter.log("点击悬浮菜单-会计科目");
+			// Reporter.log("点击悬浮菜单-会计科目");
 			click("会计科目悬浮");
 
-			Reporter.log("鼠标移动到logo");
+			// Reporter.log("鼠标移动到logo");
 			mouseMoveTo("logo");
 
 			Thread.sleep(1500);
@@ -274,24 +274,24 @@ public class AccountingMainPage extends Handler {
 		try {
 			switchToDefaultContent();
 
-			Reporter.log("检查汇率档案是否显示是则关闭");
+			// Reporter.log("检查汇率档案是否显示是则关闭");
 			closeLable("汇率档案");
 
-			Reporter.log("检查总账是否已打开");
+			// Reporter.log("检查总账是否已打开");
 			if (!isDisplayed("凭证管理")) {
-				Reporter.log("总账未打开");
+				// Reporter.log("总账未打开");
 
-				Reporter.log("点击总账");
+				// Reporter.log("点击总账");
 				click("总账");
 			}
 
-			Reporter.log("鼠标移动到基础设置");
+			// Reporter.log("鼠标移动到基础设置");
 			mouseMoveTo("基础设置-总账");
 
-			Reporter.log("点击悬浮菜单-汇率档案");
+			// Reporter.log("点击悬浮菜单-汇率档案");
 			click("汇率档案悬浮");
 
-			Reporter.log("鼠标移动到logo");
+			// Reporter.log("鼠标移动到logo");
 			mouseMoveTo("logo");
 
 			Thread.sleep(1000);
@@ -309,24 +309,24 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭发生额及余额表");
+		// Reporter.log("关闭发生额及余额表");
 		closeLable("发生额及余额表");
 
-		Reporter.log("检查总账是否打开");
+		// Reporter.log("检查总账是否打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
-		Reporter.log("鼠标移动到科目帐表");
+		// Reporter.log("鼠标移动到科目帐表");
 		mouseMoveTo("科目账表");
 
-		Reporter.log("点击悬浮菜单-发生额及余额表");
+		// Reporter.log("点击悬浮菜单-发生额及余额表");
 		click("发生额及余额表悬浮");
 
-		Reporter.log("鼠标移动到logo");
+		// Reporter.log("鼠标移动到logo");
 		mouseMoveTo("logo");
 
 		Thread.sleep(1500);
@@ -337,21 +337,21 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭科目汇总表");
+		// Reporter.log("关闭科目汇总表");
 		closeLable("科目汇总表");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (isDisplayed("凭证管理") != true) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
-		Reporter.log("鼠标移动到科目帐表");
+		// Reporter.log("鼠标移动到科目帐表");
 		mouseMoveTo("科目账表");
 
-		Reporter.log("点击悬浮菜单-科目汇总表");
+		// Reporter.log("点击悬浮菜单-科目汇总表");
 		click("科目汇总表悬浮");
 
 		mouseMoveTo("logo");
@@ -364,24 +364,24 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭科目明细账");
+		// Reporter.log("关闭科目明细账");
 		closeLable("科目明细账");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (isDisplayed("凭证管理") != true) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
-		Reporter.log("鼠标移动到科目帐表");
+		// Reporter.log("鼠标移动到科目帐表");
 		mouseMoveTo("科目账表");
 
-		Reporter.log("点击科目明细账");
+		// Reporter.log("点击科目明细账");
 		click("科目明细账悬浮");
 
-		Reporter.log("鼠标移动到logo");
+		// Reporter.log("鼠标移动到logo");
 		mouseMoveTo("logo");
 
 		Thread.sleep(1500);
@@ -392,24 +392,24 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭科目总账");
+		// Reporter.log("关闭科目总账");
 		closeLable("科目总账");
 
-		Reporter.log("检查总账是否显示");
+		// Reporter.log("检查总账是否显示");
 		if (isDisplayed("凭证管理") != true) {
-			Reporter.log("总账未显示");
+			// Reporter.log("总账未显示");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
-		Reporter.log("鼠标移动到科目账表");
+		// Reporter.log("鼠标移动到科目账表");
 		mouseMoveTo("科目账表");
 
-		Reporter.log("点击科目总账");
+		// Reporter.log("点击科目总账");
 		click("科目总账悬浮");
 
-		Reporter.log("鼠标移动到logo");
+		// Reporter.log("鼠标移动到logo");
 		mouseMoveTo("logo");
 
 		Thread.sleep(1500);
@@ -420,24 +420,24 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭数量金额明细账");
+		// Reporter.log("关闭数量金额明细账");
 		closeLable("数量金额明细账");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (isDisplayed("凭证管理") != true) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
-		Reporter.log("鼠标移动到科目帐表");
+		// Reporter.log("鼠标移动到科目帐表");
 		mouseMoveTo("科目账表");
 
-		Reporter.log("点击数量金额明细账");
+		// Reporter.log("点击数量金额明细账");
 		click("数量金额明细账悬浮");
 
-		Reporter.log("鼠标移动到logo");
+		// Reporter.log("鼠标移动到logo");
 		mouseMoveTo("logo");
 
 		Thread.sleep(1500);
@@ -448,24 +448,24 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭数量金额总账frame");
+		// Reporter.log("关闭数量金额总账frame");
 		closeLable("数量金额总账");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (isDisplayed("凭证管理") != true) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
-		Reporter.log("鼠标移动到科目账表");
+		// Reporter.log("鼠标移动到科目账表");
 		mouseMoveTo("科目账表");
 
-		Reporter.log("点击数量金额总账");
+		// Reporter.log("点击数量金额总账");
 		click("数量金额总账悬浮");
 
-		Reporter.log("鼠标移动到logo");
+		// Reporter.log("鼠标移动到logo");
 		mouseMoveTo("logo");
 
 		Thread.sleep(1500);
@@ -476,24 +476,24 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭现金/银行日记账");
+		// Reporter.log("关闭现金/银行日记账");
 		closeLable("现金/银行日记账");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
-		Reporter.log("鼠标移动到科目账表");
+		// Reporter.log("鼠标移动到科目账表");
 		mouseMoveTo("科目账表");
 
-		Reporter.log("点击现金/银行日记账");
+		// Reporter.log("点击现金/银行日记账");
 		click("现金银行日记账悬浮");
 
-		Reporter.log("鼠标移动到logo");
+		// Reporter.log("鼠标移动到logo");
 		mouseMoveTo("logo");
 
 		Thread.sleep(1500);
@@ -504,18 +504,18 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭序时账");
+		// Reporter.log("关闭序时账");
 		closeLable("序时账");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
-		Reporter.log("鼠标移动到科目账表");
+		// Reporter.log("鼠标移动到科目账表");
 		mouseMoveTo("科目账表");
 
 		click("序时账悬浮");
@@ -530,18 +530,18 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭利润表季报");
+		// Reporter.log("关闭利润表季报");
 		closeLable("利润表季报");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
-		Reporter.log("鼠标移动到财务账表");
+		// Reporter.log("鼠标移动到财务账表");
 		mouseMoveTo("财务账表");
 
 		click("利润表季报悬浮");
@@ -556,14 +556,14 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭利润表");
+		// Reporter.log("关闭利润表");
 		closeLable("利润表");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
@@ -581,14 +581,14 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭收入支出表");
+		// Reporter.log("关闭收入支出表");
 		closeLable("收入支出表");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 		mouseMoveTo("财务账表");
@@ -605,14 +605,14 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("关闭现金流量表");
+		// Reporter.log("关闭现金流量表");
 		closeLable("现金流量表");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
@@ -632,11 +632,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("业务活动表");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
@@ -656,11 +656,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("增值税和营业税月度申报对比表");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
@@ -680,11 +680,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("资产负债表");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
@@ -704,11 +704,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("常用凭证模板");
 
-		Reporter.log("检查总账是否已打开");
+		// Reporter.log("检查总账是否已打开");
 		if (!isDisplayed("凭证管理")) {
-			Reporter.log("总账未打开");
+			// Reporter.log("总账未打开");
 
-			Reporter.log("点击总账");
+			// Reporter.log("点击总账");
 			click("总账");
 		}
 
@@ -728,11 +728,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("卡片管理");
 
-		Reporter.log("检查固定资产是否已打开");
+		// Reporter.log("检查固定资产是否已打开");
 		if (!isDisplayed("资产管理")) {
-			Reporter.log("固定资产");
+			// Reporter.log("固定资产");
 
-			Reporter.log("点击固定资产");
+			// Reporter.log("点击固定资产");
 			click("固定资产");
 		}
 
@@ -752,11 +752,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("原值变更");
 
-		Reporter.log("检查固定资产是否已打开");
+		// Reporter.log("检查固定资产是否已打开");
 		if (!isDisplayed("资产管理")) {
-			Reporter.log("固定资产");
+			// Reporter.log("固定资产");
 
-			Reporter.log("点击固定资产");
+			// Reporter.log("点击固定资产");
 			click("固定资产");
 		}
 
@@ -776,11 +776,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("资产清理");
 
-		Reporter.log("检查固定资产是否已打开");
+		// Reporter.log("检查固定资产是否已打开");
 		if (!isDisplayed("资产管理")) {
-			Reporter.log("固定资产");
+			// Reporter.log("固定资产");
 
-			Reporter.log("点击固定资产");
+			// Reporter.log("点击固定资产");
 			click("固定资产");
 		}
 
@@ -800,11 +800,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("工作量管理");
 
-		Reporter.log("检查固定资产是否已打开");
+		// Reporter.log("检查固定资产是否已打开");
 		if (!isDisplayed("资产管理")) {
-			Reporter.log("固定资产");
+			// Reporter.log("固定资产");
 
-			Reporter.log("点击固定资产");
+			// Reporter.log("点击固定资产");
 			click("固定资产");
 		}
 
@@ -824,11 +824,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("折旧汇总表");
 
-		Reporter.log("检查固定资产是否已打开");
+		// Reporter.log("检查固定资产是否已打开");
 		if (!isDisplayed("资产管理")) {
-			Reporter.log("固定资产");
+			// Reporter.log("固定资产");
 
-			Reporter.log("点击固定资产");
+			// Reporter.log("点击固定资产");
 			click("固定资产");
 		}
 
@@ -848,11 +848,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("资产明细账");
 
-		Reporter.log("检查固定资产是否已打开");
+		// Reporter.log("检查固定资产是否已打开");
 		if (!isDisplayed("资产管理")) {
-			Reporter.log("固定资产");
+			// Reporter.log("固定资产");
 
-			Reporter.log("点击固定资产");
+			// Reporter.log("点击固定资产");
 			click("固定资产");
 		}
 
@@ -872,11 +872,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("资产与总账对账表");
 
-		Reporter.log("检查固定资产是否已打开");
+		// Reporter.log("检查固定资产是否已打开");
 		if (!isDisplayed("资产管理")) {
-			Reporter.log("固定资产未打开");
+			// Reporter.log("固定资产未打开");
 
-			Reporter.log("点击固定资产");
+			// Reporter.log("点击固定资产");
 			click("固定资产");
 		}
 
@@ -896,11 +896,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("资产总账");
 
-		Reporter.log("检查固定资产是否已打开");
+		// Reporter.log("检查固定资产是否已打开");
 		if (!isDisplayed("资产管理")) {
-			Reporter.log("固定资产");
+			// Reporter.log("固定资产");
 
-			Reporter.log("点击固定资产");
+			// Reporter.log("点击固定资产");
 			click("固定资产");
 		}
 
@@ -920,11 +920,11 @@ public class AccountingMainPage extends Handler {
 
 		closeLable("资产折旧明细");
 
-		Reporter.log("检查固定资产是否已打开");
+		// Reporter.log("检查固定资产是否已打开");
 		if (!isDisplayed("资产管理")) {
-			Reporter.log("固定资产未打开");
+			// Reporter.log("固定资产未打开");
 
-			Reporter.log("点击固定资产");
+			// Reporter.log("点击固定资产");
 			click("固定资产");
 		}
 
@@ -948,7 +948,7 @@ public class AccountingMainPage extends Handler {
 				isDisplayed(driver
 						.findElement(By.xpath("//*[@id='main']/div[1]/div[3]/ul//span[text()='" + lableName + "']")));
 			} catch (NoSuchElementException e) {
-				Reporter.log("没有找到标签：" + lableName);
+				// Reporter.log("没有找到标签：" + lableName);
 				return false;
 			}
 
@@ -965,7 +965,7 @@ public class AccountingMainPage extends Handler {
 			switchToDefaultContent();
 
 			if (!LableisOpened(lableName)) {
-				Reporter.log(lableName + "没有打开");
+				// Reporter.log(lableName + "没有打开");
 			}
 			// // 检查填制凭证是否显示如果显示关闭该标签页
 			// WebElement 标签栏 = getWebElement("全部标签页");
@@ -978,10 +978,10 @@ public class AccountingMainPage extends Handler {
 				// 点击按钮上的关闭按钮
 				click(按钮.findElement(By.xpath("../../a[2]")));
 
-				Reporter.log(lableName + "已关闭：" + !LableisOpened(lableName));
+				// Reporter.log(lableName + "已关闭：" + !LableisOpened(lableName));
 
 			} catch (NoSuchElementException e) {
-				Reporter.log("没有找到：" + lableName + "，关闭失败！");
+//				Reporter.log("没有找到：" + lableName + "，关闭失败！");
 			}
 		} catch (MyException e) {
 			throw e;
@@ -992,13 +992,13 @@ public class AccountingMainPage extends Handler {
 		try {
 			switchToDefaultContent();
 
-			Reporter.log("鼠标移动到用户信息按钮");
+			// Reporter.log("鼠标移动到用户信息按钮");
 			mouseMoveTo("用户信息与退出");
 
-			Reporter.log("点击退出按钮");
+			// Reporter.log("点击退出按钮");
 			click("退出按钮");
 
-			Reporter.log("判断用户名输入框是否显示并返回");
+			// Reporter.log("判断用户名输入框是否显示并返回");
 			return isDisplayed("用户名输入框");
 
 		} catch (MyException e) {
@@ -1015,7 +1015,7 @@ public class AccountingMainPage extends Handler {
 
 		switchToDefaultContent();
 
-		Reporter.log("检查" + frameName + "是否打开并关闭");
+		// Reporter.log("检查" + frameName + "是否打开并关闭");
 		closeLable(frameName);
 
 		String parent = "";
@@ -1111,18 +1111,18 @@ public class AccountingMainPage extends Handler {
 
 		System.out.println("frameName:" + frameName + "；parent:" + parent + "；assetsclass:" + assetsclass);
 
-		Reporter.log("检查" + assetsclass + "是否已打开");
+		// Reporter.log("检查" + assetsclass + "是否已打开");
 		if (!isDisplayed(parent)) {
-			Reporter.log(assetsclass + "未打开");
+			// Reporter.log(assetsclass + "未打开");
 
-			Reporter.log("点击" + assetsclass);
+			// Reporter.log("点击" + assetsclass);
 			click(assetsclass);
 		}
 
-		Reporter.log("鼠标移动到：" + parent);
+		// Reporter.log("鼠标移动到：" + parent);
 		mouseMoveTo(parent);
 
-		Reporter.log("点击" + frameName);
+		// Reporter.log("点击" + frameName);
 		click(frameName + "悬浮");
 
 		mouseMoveTo("logo");

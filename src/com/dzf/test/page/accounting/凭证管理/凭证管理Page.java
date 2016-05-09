@@ -1,10 +1,7 @@
 package com.dzf.test.page.accounting.凭证管理;
 
 import java.util.Iterator;
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 
 import com.dzf.test.model.Handler;
@@ -33,11 +30,12 @@ public class 凭证管理Page extends Handler {
 			Thread.sleep(1000);
 
 			// 点击审核按钮
-			Reporter.log("点击审核按钮");
+//			Reporter.log("点击审核按钮");
 			click("审核按钮");
 
 			Thread.sleep(10000);
 		} catch (MyException e) {
+			Reporter.log(e.getMessage());
 			Reporter.log("审核凭证失败");
 			throw e;
 		}
@@ -55,11 +53,12 @@ public class 凭证管理Page extends Handler {
 			Thread.sleep(1000);
 
 			// 点击审核按钮
-			Reporter.log("点击反审核按钮");
+//			Reporter.log("点击反审核按钮");
 			click("反审核按钮");
 
 			Thread.sleep(10000);
 		} catch (MyException e) {
+			Reporter.log(e.getMessage());
 			Reporter.log("反审核失败");
 			throw e;
 		}
@@ -78,11 +77,12 @@ public class 凭证管理Page extends Handler {
 			Thread.sleep(1000);
 
 			// 点击记账按钮
-			Reporter.log("点击记账按钮");
+//			Reporter.log("点击记账按钮");
 			click("记账按钮");
 
 			Thread.sleep(10000);
 		} catch (MyException e) {
+			Reporter.log(e.getMessage());
 			Reporter.log("记账失败");
 			throw e;
 		}
@@ -104,7 +104,8 @@ public class 凭证管理Page extends Handler {
 
 			Thread.sleep(10000);
 		} catch (MyException e) {
-			Reporter.log("记账失败");
+			Reporter.log(e.getMessage());
+			Reporter.log("反记账失败");
 			throw e;
 		}
 	}
@@ -169,6 +170,7 @@ public class 凭证管理Page extends Handler {
 
 			return false;
 		} catch (MyException e) {
+			Reporter.log(e.getMessage());
 			Reporter.log("查找失败");
 			throw e;
 		}
@@ -277,9 +279,10 @@ public class 凭证管理Page extends Handler {
 			switchToDefaultContent();
 			switchToFrame(getWebElement("凭证管理iframe"));
 
-			Reporter.log("点击刷新按钮");
+//			Reporter.log("点击刷新按钮");
 			click("刷新按钮");
 		} catch (MyException e) {
+			Reporter.log(e.getMessage());
 			Reporter.log("刷新失败");
 			throw e;
 		}
@@ -329,6 +332,7 @@ public class 凭证管理Page extends Handler {
 
 			return result;
 		} catch (MyException e) {
+			Reporter.log(e.getMessage());
 			Reporter.log("打印失败！");
 			throw e;
 		}
@@ -344,6 +348,7 @@ public class 凭证管理Page extends Handler {
 
 			click("导出按钮");
 		} catch (MyException e) {
+			Reporter.log(e.getMessage());
 			Reporter.log("导出失败！");
 			throw e;
 		}
@@ -355,9 +360,10 @@ public class 凭证管理Page extends Handler {
 	public void selectVoucherByCode(String VoucherCode) throws MyException {
 		try {
 			switchToDefaultContent();
-			switchToFrame(getWebElement("凭证管理iframe"));
+			switchToFrame("凭证管理iframe");
 
 		} catch (MyException e) {
+			Reporter.log(e.getMessage());
 			Reporter.log("选择凭证" + VoucherCode + "失败！");
 			throw e;
 		}

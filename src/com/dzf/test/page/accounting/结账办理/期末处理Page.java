@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
 
 import com.dzf.test.model.Handler;
 import com.dzf.test.model.Page;
@@ -29,7 +30,7 @@ public class 期末处理Page extends Handler {
 			throws MyException {
 		// 切换到期末处理iframe
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		mouseMoveTo("查询按钮");
 
@@ -102,7 +103,7 @@ public class 期末处理Page extends Handler {
 	 */
 	public boolean 成本结转() throws InterruptedException, MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		click("成本结转按钮");
 
@@ -115,7 +116,7 @@ public class 期末处理Page extends Handler {
 	 */
 	public boolean 反成本结转() throws InterruptedException, MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		click("反成本结转按钮");
 		Thread.sleep(5000);
@@ -127,7 +128,7 @@ public class 期末处理Page extends Handler {
 	 */
 	public boolean 计提折旧() throws InterruptedException, MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		click("计提折旧按钮");
 		Thread.sleep(5000);
@@ -139,7 +140,7 @@ public class 期末处理Page extends Handler {
 	 */
 	public boolean 反计提折旧() throws InterruptedException, MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		click("反计提折旧按钮");
 		Thread.sleep(5000);
@@ -148,7 +149,7 @@ public class 期末处理Page extends Handler {
 
 	public void 期间损益结转() throws InterruptedException, MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		Thread.sleep(1000);
 
@@ -166,7 +167,7 @@ public class 期末处理Page extends Handler {
 	 */
 	public void 反期间损益结转() throws InterruptedException, MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		Thread.sleep(1000);
 
@@ -181,7 +182,7 @@ public class 期末处理Page extends Handler {
 	 */
 	public boolean 汇兑损益调整() throws InterruptedException, MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		click("汇兑损益调整按钮");
 
@@ -192,7 +193,7 @@ public class 期末处理Page extends Handler {
 
 	public boolean 取消汇兑调整() throws InterruptedException, MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		if (!isDisplayed("汇兑调整面板-取消按钮")) {
 			return false;
@@ -210,19 +211,78 @@ public class 期末处理Page extends Handler {
 	 */
 	public boolean refresh() throws MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
 
 		click("刷新按钮");
 
 		return false;
 	}
 
+	/*
+	 * 全选
+	 */
 	public boolean selectAll() throws MyException {
 		switchToDefaultContent();
-		switchToFrame(getWebElement("期末处理iframe"));
+		switchToFrame("期末处理");
+
+		if (isSelected("全选复选框")) {
+			return true;
+		}
 
 		click("全选复选框");
 
-		return false;
+		return isSelected("全选复选框");
+	}
+
+	/*
+	 * 全不选
+	 */
+	public boolean deSelectAll() throws MyException {
+		switchToDefaultContent();
+		switchToFrame("期末处理");
+
+		if (isSelected("全选复选框")) {
+			click("全选复选框");
+		} else {
+			click("全选复选框");
+
+			click("全选复选框");
+		}
+
+		return getWebElements(getWebElement("期间列表table"), By.xpath("./tbody/tr[contains(@class,'checked')]"))
+				.size() == 0;
+	}
+
+	/*
+	 * 成本结转
+	 */
+	public boolean selectPeriod(String period) throws InterruptedException, MyException {
+		try {
+			switchToDefaultContent();
+			switchToFrame("期末处理");
+
+			// WebTableUtil table = new
+			// WebTableUtil(getWebElement("期间列表table"));
+
+			// 获取期间的cell
+			WebElement 期间cell = getWebElement("期间列表table")
+					.findElement(By.xpath(".//td[@field='qj' and child::div[text()='" + period + "']]"));
+
+			// 判断所在tr是否已选中
+			if (!期间cell.findElement(By.xpath("./parent::tr")).getAttribute("class").contains("checked")) {
+				// 如果未选中
+				// 点击checkbox
+				click(期间cell.findElement(By.xpath("./parent::tr")));
+
+			} else {
+				return true;
+			}
+
+			return 期间cell.findElement(By.xpath("./parent::tr")).getAttribute("class").contains("checked");
+		} catch (MyException e) {
+			Reporter.log(e.getMessage());
+			Reporter.log("选择期间：" + period + "失败！");
+			throw e;
+		}
 	}
 }

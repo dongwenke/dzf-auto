@@ -37,9 +37,8 @@
 	<element id="1" name="反成本结转按钮" method="id" value="btn_cbjzf"></element>
 	<element id="1" name="计提折旧按钮" method="id" value="btn_jiti"></element>
 	<element id="1" name="反计提折旧按钮" method="id" value="btn_jitif"></element>
-	<element id="1" name="汇兑调整面板-取消按钮" method="xpath"
-		value=".//a[@onclick='ondlgcancel()']"></element>
-	<element id="1" name="" method="" value=""></element>
+	<element id="1" name="汇兑调整面板-取消按钮" method="xpath" value=".//a[@onclick='ondlgcancel()']"></element>
+	<element id="1" name="期间列表table" method="xpath" value=".//*[@id='dataGrid']/div/div/div/div[2]/div[2]/table"></element>
 	<element id="1" name="" method="" value=""></element>
 	<element id="1" name="" method="" value=""></element>
 	<element id="1" name="" method="" value=""></element>

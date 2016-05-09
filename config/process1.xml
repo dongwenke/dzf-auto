@@ -73,8 +73,8 @@
 	</test>
 
 	<test name="scenery2" enabled="true" preserve-order="true">
-		<parameter name="用户名" value="taozi001"></parameter>
-		<parameter name="密码" value="taozi001!!"></parameter>
+		<parameter name="用户名" value="dwk001"></parameter>
+		<parameter name="密码" value="dwk001!!"></parameter>
 		<parameter name="公司名称" value="桃子传媒"></parameter>
 		<classes>
 			<class name="com.dzf.test.testcase.SuiteConfig"></class>
@@ -84,16 +84,16 @@
 					<include name="setup"></include>
 
 					<include name="test汇率档案">
-					<parameter name="币种" value="美元"></parameter>
-					<parameter name="汇率" value="6.5"></parameter>
-					<parameter name="折算模式" value="原币×汇率=本位币"></parameter>
-					<parameter name="是否浮动汇率" value="是"></parameter>
-					<parameter name="备注" value="美元6.5"></parameter>
+						<parameter name="币种" value="美元"></parameter>
+						<parameter name="汇率" value="6.5"></parameter>
+						<parameter name="折算模式" value="原币×汇率=本位币"></parameter>
+						<parameter name="是否浮动汇率" value="是"></parameter>
+						<parameter name="备注" value="美元6.5"></parameter>
 					</include>
 
 					<include name="test会计科目">
-					<parameter name="科目" value="其他货币资金"></parameter>
-					<parameter name="币别" value="美元"></parameter>
+						<parameter name="科目" value="其他货币资金"></parameter>
+						<parameter name="币别" value="美元"></parameter>
 					</include>
 
 					<include name="test期初录入固定资产卡片">
@@ -114,25 +114,25 @@
 					</include>
 
 					<include name="test期初试算平衡">
-					<parameter name="科目一" value="1012_其他货币资金"></parameter>
-					<parameter name="币别一" value="美元"></parameter>
-					<parameter name="修改项一" value="原币本年期初"></parameter>
-					<parameter name="金额一" value="10000"></parameter>
+						<parameter name="科目一" value="1012_其他货币资金"></parameter>
+						<parameter name="币别一" value="美元"></parameter>
+						<parameter name="修改项一" value="原币本年期初"></parameter>
+						<parameter name="金额一" value="10000"></parameter>
 
-					<parameter name="科目二" value="2001_短期借款"></parameter>
-					<parameter name="币别二" value="人民币"></parameter>
-					<parameter name="修改项二" value="本年期初金额"></parameter>
-					<parameter name="金额二" value="67000"></parameter>
+						<parameter name="科目二" value="2001_短期借款"></parameter>
+						<parameter name="币别二" value="人民币"></parameter>
+						<parameter name="修改项二" value="本年期初金额"></parameter>
+						<parameter name="金额二" value="67000"></parameter>
 					</include>
 					<include name="test期初试算平衡其它按钮"></include>
 
 					<include name="test填制凭证">
-					<parameter name="摘要" value="测试摘要"></parameter>
-					<parameter name="科目一" value="其他货币资金"></parameter>
-					<parameter name="汇率" value="6.5"></parameter>
-					<parameter name="原币" value="100"></parameter>
-					<parameter name="金额" value="650"></parameter>
-					<parameter name="科目二" value="银行存款"></parameter>
+						<parameter name="摘要" value="测试摘要"></parameter>
+						<parameter name="科目一" value="其他货币资金"></parameter>
+						<parameter name="汇率" value="6.5"></parameter>
+						<parameter name="原币" value="100"></parameter>
+						<parameter name="金额" value="650"></parameter>
+						<parameter name="科目二" value="银行存款"></parameter>
 					</include>
 
 					<include name="test填制凭证其它功能"></include>
@@ -155,14 +155,14 @@
 					</include>
 
 					<include name="test凭证管理">
-					<parameter name="查询方式" value="期间"></parameter>
-					<parameter name="开始日期" value="2016-04"></parameter>
-					<parameter name="结束日期" value="2016-04"></parameter>
+						<parameter name="查询方式" value="期间"></parameter>
+						<parameter name="开始日期" value="2016-04"></parameter>
+						<parameter name="结束日期" value="2016-04"></parameter>
 					</include>
 
 					<include name="test期末处理">
-					<parameter name="开始日期" value="2016-04"></parameter>
-					<parameter name="结束日期" value="2016-12"></parameter>
+						<parameter name="开始日期" value="2016-04"></parameter>
+						<parameter name="结束日期" value="2016-12"></parameter>
 					</include>
 
 					<include name="test科目总账"></include>
@@ -175,23 +175,21 @@
 					<include name="test数量金额总账"></include>
 					<include name="test利润表季报"></include>
 					<include name="test利润表"></include>
+					<include name="test现金流量表"></include>
+					<include name="test增值税和营业税月度申报对比表"></include>
+					<include name="test资产负债表"></include>
+
 					<!-- 13小企业不包含该项 -->
 					<!-- <include name="test收入支出表"></include> -->
-
-					<include name="test现金流量表"></include>
-
 					<!-- 13小企业不包含该项 -->
 					<!-- <include name="test业务活动表"></include> -->
 
-					<include name="test增值税和营业税月度申报对比表"></include>
-					<include name="test资产负债表"></include>
-					
 					<include name="test折旧汇总表"></include>
 					<include name="test资产明细账"></include>
 					<include name="test资产与总账对账表"></include>
 					<include name="test资产折旧明细"></include>
 					<include name="test资产总账"></include>
-					
+
 				</methods>
 			</class>
 		</classes>

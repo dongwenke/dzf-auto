@@ -1,19 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="scenery2"
            tests="28"
-           failures="1"
+           failures="18"
            errors="0"
-           skipped="18"
-           time="983.075">
+           skipped="4"
+           time="972.733">
   <properties />
-            <testcase name="test凭证管理" time="12.252" classname="com.dzf.test.testscenery.TestScenery2">
+            <testcase name="test科目汇总表" time="26.481" classname="com.dzf.test.testscenery.TestScenery2">
                 <failure type="com.dzf.test.util.MyException"
-                  message="鼠标移动到：凭证管理失败！"
+                  message="【打印面板-打印按钮】 点击失败！"
               >
-<![CDATA[com.dzf.test.util.MyException: 鼠标移动到：凭证管理失败！
-  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:403)
-  com.dzf.test.page.accounting.AccountingMainPage.open凭证管理(AccountingMainPage.java:69)
-  com.dzf.test.testscenery.TestScenery2.test凭证管理(TestScenery2.java:329)
+<![CDATA[com.dzf.test.util.MyException: 【打印面板-打印按钮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.科目账表.科目汇总表Page.print(科目汇总表Page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test科目汇总表(TestScenery2.java:493)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.xpath: .//a[@onclick='doPrint()']
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.科目账表.科目汇总表Page.print(科目汇总表Page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test科目汇总表(TestScenery2.java:493)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test期初录入固定资产卡片" time="138.021" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="java.lang.AssertionError"
+                  message="卡片已添加，编号： expected [true] but found [false]"
+              >
+<![CDATA[java.lang.AssertionError: 卡片已添加，编号： expected [true] but found [false]
+  org.testng.Assert.fail(Assert.java:94)
+  org.testng.Assert.failNotEquals(Assert.java:513)
+  org.testng.Assert.assertTrue(Assert.java:42)
+  com.dzf.test.testscenery.TestScenery2.test期初录入固定资产卡片(TestScenery2.java:176)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test资产明细账" time="13.512" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="鼠标移动到：资产报表失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 鼠标移动到：资产报表失败！
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:412)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test资产明细账(TestScenery2.java:671)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -40,12 +151,12 @@
   org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
   org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
 Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
-Command duration or timeout: 16 milliseconds
+Command duration or timeout: 18 milliseconds
 Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
 System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 50ccf856-3b2d-4dfb-abe5-4f3fe8724d8f
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
   sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
   sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
   sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -58,9 +169,9 @@ Session ID: 50ccf856-3b2d-4dfb-abe5-4f3fe8724d8f
   org.openqa.selenium.interactions.MoveMouseAction.perform(MoveMouseAction.java:35)
   org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:31)
   org.openqa.selenium.interactions.Actions.perform(Actions.java:367)
-  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:397)
-  com.dzf.test.page.accounting.AccountingMainPage.open凭证管理(AccountingMainPage.java:69)
-  com.dzf.test.testscenery.TestScenery2.test凭证管理(TestScenery2.java:329)
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:406)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test资产明细账(TestScenery2.java:671)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -90,78 +201,1264 @@ Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Offse
 Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
 System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
 Driver info: driver.version: unknown
-  <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous3239317062209450664webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10961)
-  <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous3239317062209450664webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
-  <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous3239317062209450664webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
-  <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous3239317062209450664webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+  <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10961)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+  <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test科目明细帐" time="26.440" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【打印面板-打印按钮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【打印面板-打印按钮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.科目账表.科目明细账Page.print(科目明细账Page.java:51)
+  com.dzf.test.testscenery.TestScenery2.test科目明细帐(TestScenery2.java:427)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.xpath: .//a[@onclick='doPrint()']
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.科目账表.科目明细账Page.print(科目明细账Page.java:51)
+  com.dzf.test.testscenery.TestScenery2.test科目明细帐(TestScenery2.java:427)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test折旧汇总表" time="13.521" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="鼠标移动到：资产报表失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 鼠标移动到：资产报表失败！
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:412)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test折旧汇总表(TestScenery2.java:656)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Command duration or timeout: 30 milliseconds
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+  org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+  org.openqa.selenium.remote.RemoteExecuteMethod.execute(RemoteExecuteMethod.java:34)
+  org.openqa.selenium.remote.RemoteMouse.mouseMove(RemoteMouse.java:88)
+  org.openqa.selenium.interactions.MoveMouseAction.perform(MoveMouseAction.java:35)
+  org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:31)
+  org.openqa.selenium.interactions.Actions.perform(Actions.java:367)
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:406)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test折旧汇总表(TestScenery2.java:656)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: driver.version: unknown
+  <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10961)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+  <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test填制凭证其它功能" time="68.338" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【保存为常用凭证模版按钮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【保存为常用凭证模版按钮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.凭证管理.填制凭证Page.saveAsCommonTemplet(填制凭证Page.java:456)
+  com.dzf.test.testscenery.TestScenery2.test填制凭证其它功能(TestScenery2.java:259)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.id: crePzTemplate
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.凭证管理.填制凭证Page.saveAsCommonTemplet(填制凭证Page.java:456)
+  com.dzf.test.testscenery.TestScenery2.test填制凭证其它功能(TestScenery2.java:259)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"id","selector":"crePzTemplate"}
+Command duration or timeout: 6.06 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+  org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:348)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:389)
+  org.openqa.selenium.By$ById.findElement(By.java:214)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:340)
+  org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:911)
+  org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:41)
+  org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+  org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+  org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:661)
+  org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:654)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:238)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.凭证管理.填制凭证Page.saveAsCommonTemplet(填制凭证Page.java:456)
+  com.dzf.test.testscenery.TestScenery2.test填制凭证其它功能(TestScenery2.java:259)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Unable to locate element: {"method":"id","selector":"crePzTemplate"}
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: driver.version: unknown
+  <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+  <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test资产折旧明细" time="13.631" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="鼠标移动到：资产报表失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 鼠标移动到：资产报表失败！
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:412)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test资产折旧明细(TestScenery2.java:701)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Command duration or timeout: 27 milliseconds
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+  org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+  org.openqa.selenium.remote.RemoteExecuteMethod.execute(RemoteExecuteMethod.java:34)
+  org.openqa.selenium.remote.RemoteMouse.mouseMove(RemoteMouse.java:88)
+  org.openqa.selenium.interactions.MoveMouseAction.perform(MoveMouseAction.java:35)
+  org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:31)
+  org.openqa.selenium.interactions.Actions.perform(Actions.java:367)
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:406)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test资产折旧明细(TestScenery2.java:701)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: driver.version: unknown
+  <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10961)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+  <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test增值税和营业税月度申报对比表" time="18.437" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【增值税和营业税月度申报对比表悬浮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【增值税和营业税月度申报对比表悬浮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1126)
+  com.dzf.test.testscenery.TestScenery2.test增值税和营业税月度申报对比表(TestScenery2.java:627)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.id: 增值税和营业税月度申报对比表
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1126)
+  com.dzf.test.testscenery.TestScenery2.test增值税和营业税月度申报对比表(TestScenery2.java:627)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test发生额及余额表" time="26.730" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【打印面板-打印按钮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【打印面板-打印按钮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.科目账表.发生额及余额表Page.print(发生额及余额表Page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test发生额及余额表(TestScenery2.java:461)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.xpath: .//a[@onclick='doPrint()']
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.科目账表.发生额及余额表Page.print(发生额及余额表Page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test发生额及余额表(TestScenery2.java:461)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test利润表季报" time="26.585" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【打印面板-打印按钮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【打印面板-打印按钮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.财务账表.利润表季报page.print(利润表季报page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test利润表季报(TestScenery2.java:541)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.xpath: .//a[@onclick='doPrint()']
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.财务账表.利润表季报page.print(利润表季报page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test利润表季报(TestScenery2.java:541)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test资产总账" time="13.563" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="鼠标移动到：资产报表失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 鼠标移动到：资产报表失败！
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:412)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test资产总账(TestScenery2.java:716)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Command duration or timeout: 7 milliseconds
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+  org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+  org.openqa.selenium.remote.RemoteExecuteMethod.execute(RemoteExecuteMethod.java:34)
+  org.openqa.selenium.remote.RemoteMouse.mouseMove(RemoteMouse.java:88)
+  org.openqa.selenium.interactions.MoveMouseAction.perform(MoveMouseAction.java:35)
+  org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:31)
+  org.openqa.selenium.interactions.Actions.perform(Actions.java:367)
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:406)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test资产总账(TestScenery2.java:716)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: driver.version: unknown
+  <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10961)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+  <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test科目总账" time="26.485" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【打印面板-打印按钮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【打印面板-打印按钮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.科目账表.科目总账Page.print(科目总账Page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test科目总账(TestScenery2.java:410)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.xpath: .//a[@onclick='doPrint()']
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.科目账表.科目总账Page.print(科目总账Page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test科目总账(TestScenery2.java:410)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test利润表" time="18.355" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【利润表悬浮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【利润表悬浮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1126)
+  com.dzf.test.testscenery.TestScenery2.test利润表(TestScenery2.java:555)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.id: 利润表
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1126)
+  com.dzf.test.testscenery.TestScenery2.test利润表(TestScenery2.java:555)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test现金流量表" time="18.234" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【现金流量表悬浮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【现金流量表悬浮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1126)
+  com.dzf.test.testscenery.TestScenery2.test现金流量表(TestScenery2.java:590)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.id: 现金流量表
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1126)
+  com.dzf.test.testscenery.TestScenery2.test现金流量表(TestScenery2.java:590)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test资产负债表" time="18.288" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【资产负债表悬浮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【资产负债表悬浮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1126)
+  com.dzf.test.testscenery.TestScenery2.test资产负债表(TestScenery2.java:641)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.id: 资产负债表
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1126)
+  com.dzf.test.testscenery.TestScenery2.test资产负债表(TestScenery2.java:641)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test资产与总账对账表" time="13.461" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="鼠标移动到：资产报表失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 鼠标移动到：资产报表失败！
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:412)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test资产与总账对账表(TestScenery2.java:686)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Command duration or timeout: 10 milliseconds
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+  org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:193)
+  org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:595)
+  org.openqa.selenium.remote.RemoteExecuteMethod.execute(RemoteExecuteMethod.java:34)
+  org.openqa.selenium.remote.RemoteMouse.mouseMove(RemoteMouse.java:88)
+  org.openqa.selenium.interactions.MoveMouseAction.perform(MoveMouseAction.java:35)
+  org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:31)
+  org.openqa.selenium.interactions.Actions.perform(Actions.java:367)
+  com.dzf.test.model.Handler.mouseMoveTo(Handler.java:406)
+  com.dzf.test.page.accounting.AccountingMainPage.openFrame(AccountingMainPage.java:1123)
+  com.dzf.test.testscenery.TestScenery2.test资产与总账对账表(TestScenery2.java:686)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.remote.ErrorHandler$UnknownServerException: Offset within element cannot be scrolled into view: (0, 0): javascript:void(0)
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: driver.version: unknown
+  <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10961)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12534)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12539)
+  <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/ADMINI~1/AppData/Local/Temp/anonymous6086416528989215014webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12481)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test序时账" time="26.527" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【打印面板-打印按钮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【打印面板-打印按钮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.科目账表.序时账Page.print(序时账Page.java:54)
+  com.dzf.test.testscenery.TestScenery2.test序时账(TestScenery2.java:477)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.xpath: .//a[@onclick='doPrint()']
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.科目账表.序时账Page.print(序时账Page.java:54)
+  com.dzf.test.testscenery.TestScenery2.test序时账(TestScenery2.java:477)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+]]>
+      </failure>
+
+          </testcase>
+            <testcase name="test现金银行日记账" time="32.624" classname="com.dzf.test.testscenery.TestScenery2">
+                <failure type="com.dzf.test.util.MyException"
+                  message="【打印面板-打印按钮】 点击失败！"
+              >
+<![CDATA[com.dzf.test.util.MyException: 【打印面板-打印按钮】 点击失败！
+  com.dzf.test.model.Handler.click(Handler.java:229)
+  com.dzf.test.page.accounting.科目账表.现金银行日记账Page.print(现金银行日记账Page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test现金银行日记账(TestScenery2.java:444)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.TimeoutException: Timed out after 5 seconds waiting for element to be clickable: By.xpath: .//a[@onclick='doPrint()']
+Build info: version: '2.41.0', revision: '3192d8a6c4449dc285928ba024779344f5423c58', time: '2014-03-27 11:29:39'
+System info: host: 'dwk-pc', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_77'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=19.0, platform=WINDOWS, browserConnectionEnabled=true, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fe7368c0-5a6f-49d8-8944-4ac81fb3e2f5
+  org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+  org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+  com.dzf.test.model.Handler.click(Handler.java:219)
+  com.dzf.test.page.accounting.科目账表.现金银行日记账Page.print(现金银行日记账Page.java:53)
+  com.dzf.test.testscenery.TestScenery2.test现金银行日记账(TestScenery2.java:444)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:647)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:824)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1132)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:778)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1222)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1147)
+  org.testng.TestNG.runSuites(TestNG.java:1072)
+  org.testng.TestNG.run(TestNG.java:1044)
+  org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+  org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+  org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
 ]]>
       </failure>
 
           </testcase>
   
-            <testcase name="test期末处理" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+            <testcase name="test填制凭证" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
           <skipped />
     </testcase>
-            <testcase name="test资产与总账对账表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+            <testcase name="test凭证管理" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
           <skipped />
     </testcase>
-            <testcase name="test现金银行日记账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+            <testcase name="test期中录入固定资产卡片" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
           <skipped />
     </testcase>
-            <testcase name="test数量金额总账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test资产明细账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test序时账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test科目总账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test增值税和营业税月度申报对比表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test利润表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test发生额及余额表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test利润表季报" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test资产负债表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test折旧汇总表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test数量金额明细帐" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test科目明细帐" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test资产总账" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test科目汇总表" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
-          <skipped />
-    </testcase>
-            <testcase name="test资产折旧明细" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
+            <testcase name="test期初试算平衡" time="0.0" classname="com.dzf.test.testscenery.TestScenery2">
           <skipped />
     </testcase>
   
-            <testcase name="test期初试算平衡" time="70.903" classname="com.dzf.test.testscenery.TestScenery2" />
-                <testcase name="test汇率档案" time="50.383" classname="com.dzf.test.testscenery.TestScenery2" />
-                <testcase name="test期初录入固定资产卡片" time="424.093" classname="com.dzf.test.testscenery.TestScenery2" />
-                <testcase name="test期中录入固定资产卡片" time="139.945" classname="com.dzf.test.testscenery.TestScenery2" />
-                <testcase name="test会计科目" time="65.804" classname="com.dzf.test.testscenery.TestScenery2" />
-                <testcase name="test现金流量表" time="27.170" classname="com.dzf.test.testscenery.TestScenery2" />
-                <testcase name="test期初试算平衡其它按钮" time="35.020" classname="com.dzf.test.testscenery.TestScenery2" />
-                <testcase name="test填制凭证" time="33.282" classname="com.dzf.test.testscenery.TestScenery2" />
-                <testcase name="test填制凭证其它功能" time="124.223" classname="com.dzf.test.testscenery.TestScenery2" />
+            <testcase name="test会计科目" time="59.364" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test期末处理" time="252.943" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test数量金额总账" time="20.561" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test数量金额明细帐" time="20.479" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test期初试算平衡其它按钮" time="35.584" classname="com.dzf.test.testscenery.TestScenery2" />
+                <testcase name="test汇率档案" time="44.569" classname="com.dzf.test.testscenery.TestScenery2" />
       
 </testsuite>

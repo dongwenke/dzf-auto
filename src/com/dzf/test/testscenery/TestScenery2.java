@@ -1,7 +1,10 @@
 package com.dzf.test.testscenery;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -24,6 +27,7 @@ import com.dzf.test.page.accounting.资产报表.资产总账Page;
 import com.dzf.test.page.accounting.资产报表.资产折旧明细Page;
 import com.dzf.test.page.accounting.资产报表.资产明细账Page;
 import com.dzf.test.page.accounting.资产管理.卡片管理Page;
+import com.dzf.test.util.DateCalculatorUtil;
 import com.dzf.test.util.ILogUtil;
 import com.dzf.test.util.MyException;
 
@@ -51,7 +55,7 @@ public class TestScenery2 implements ILogUtil {
 	private 数量金额总账Page 数量金额总账;
 	private 现金银行日记账Page 现金银行日记账;
 	private 序时账Page 序时账;
-	
+
 	private 折旧汇总表Page 折旧汇总表;
 	private 资产明细账Page 资产明细账;
 	private 资产与总账对账表Page 资产与总账对账表;
@@ -87,7 +91,7 @@ public class TestScenery2 implements ILogUtil {
 		科目汇总表 = new 科目汇总表Page();
 		数量金额明细帐 = new 数量金额明细账Page();
 		数量金额总账 = new 数量金额总账Page();
-		
+
 		折旧汇总表 = new 折旧汇总表Page();
 		资产明细账 = new 资产明细账Page();
 		资产与总账对账表 = new 资产与总账对账表Page();
@@ -166,11 +170,11 @@ public class TestScenery2 implements ILogUtil {
 				Assert.assertTrue(false, "资产编码已存在！增加失败！");
 			}
 
-			boolean added = 卡片管理.add(date, code, name, classesCode, useDate, depreciationMethod, life, assetSubject, settlementSubject,
-					depreciationSubject, depreciationCostSubject, originalValue, 是否期初, 期初信息备注);
-			
-			Assert.assertTrue(added,"卡片已添加，编号："+卡片管理.getCardCode());
-			
+			boolean added = 卡片管理.add(date, code, name, classesCode, useDate, depreciationMethod, life, assetSubject,
+					settlementSubject, depreciationSubject, depreciationCostSubject, originalValue, 是否期初, 期初信息备注);
+
+			Assert.assertTrue(added, "卡片已添加，编号：" + 卡片管理.getCardCode());
+
 		} catch (MyException e) {
 			logger.error("固定资产卡片管理操作失败！", e);
 			Reporter.log(e.getMessage());
@@ -182,7 +186,7 @@ public class TestScenery2 implements ILogUtil {
 	/*
 	 * 期初试算平衡
 	 */
-	@Test(dependsOnMethods = { "test汇率档案", "test会计科目" ,"test期初录入固定资产卡片"})
+	@Test(dependsOnMethods = { "test汇率档案", "test会计科目", "test期初录入固定资产卡片" })
 	@Parameters({ "科目一", "币别一", "修改项一", "金额一", "科目二", "币别二", "修改项二", "金额二" })
 	public void test期初试算平衡(String subject1, String currency1, String project1, String num1, String subject2,
 			String currency2, String project2, String num2) throws InterruptedException, MyException {
@@ -300,19 +304,19 @@ public class TestScenery2 implements ILogUtil {
 			String 期初信息备注) throws MyException, InterruptedException {
 		try {
 			mainPage.openFrame("卡片管理");
-			
+
 			卡片管理.search("2010-01-01", "2020-12-31", null, null, null, null, null, null);
 
 			if (卡片管理.existAssetCode(code)) {
 				Assert.assertTrue(false, "资产编码已存在！增加失败！");
 			}
-			
+
 			卡片管理.add(date, code, name, classesCode, useDate, depreciationMethod, life, assetSubject, settlementSubject,
 					depreciationSubject, depreciationCostSubject, originalValue, 是否期初, 期初信息备注);
-			
+
 			卡片管理.convertLedgerOnCardShow();
-			
-			Assert.assertTrue(true, "卡片："+卡片管理.getCardCode()+"已添加并转总账");
+
+			Assert.assertTrue(true, "卡片：" + 卡片管理.getCardCode() + "已添加并转总账");
 		} catch (MyException e) {
 			logger.error("固定资产卡片管理操作失败！", e);
 			Reporter.log(e.getMessage());
@@ -357,16 +361,22 @@ public class TestScenery2 implements ILogUtil {
 
 	}
 
-	@Test(description = "期末处理", dependsOnMethods = { "test凭证管理" })
+	@Test(description = "期末处理"/* , dependsOnMethods = { "test凭证管理" } */)
 	@Parameters({ "开始日期", "结束日期" })
-	public void test期末处理(String beginDate, String endDate) throws InterruptedException, MyException {
+	public void test期末处理(String beginDate, String endDate) throws InterruptedException, MyException, ParseException {
 
 		try {
 			mainPage.openFrame("期末处理");
 			期末处理.search(null, beginDate, endDate, false, false);
 
+			List<String> periodList = DateCalculatorUtil.dateTostrList(beginDate, endDate);
+			for (String period : periodList) {
+				期末处理.deSelectAll();
+				期末处理.selectPeriod(period);
+				期末处理.成本结转();
+			}
+
 			期末处理.selectAll();
-			期末处理.成本结转();
 			// 期末处理.反成本结转();
 			期末处理.计提折旧();
 			// 期末处理.反计提折旧();
@@ -374,8 +384,13 @@ public class TestScenery2 implements ILogUtil {
 			期末处理.期间损益结转();
 			// 期末处理.反期间损益结转();
 
-			期末处理.汇兑损益调整();
-			// 期末处理.取消汇兑调整();
+			for (String period : periodList) {
+				期末处理.deSelectAll();
+				期末处理.selectPeriod(period);
+				期末处理.汇兑损益调整();
+			}
+
+			期末处理.取消汇兑调整();
 
 		} catch (MyException e) {
 			logger.error("期末处理失败！", e);
@@ -634,13 +649,13 @@ public class TestScenery2 implements ILogUtil {
 		}
 
 	}
-	
+
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test折旧汇总表() throws InterruptedException, MyException {
 		try {
 			mainPage.openFrame("折旧汇总表");
 			折旧汇总表.search("2016-01", null, null, null, null);
-			
+
 		} catch (MyException e) {
 			logger.error("查询折旧汇总表失败！", e);
 			Reporter.log(e.getMessage());
@@ -649,13 +664,13 @@ public class TestScenery2 implements ILogUtil {
 		}
 
 	}
-	
+
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test资产明细账() throws InterruptedException, MyException {
 		try {
 			mainPage.openFrame("资产明细账");
 			资产明细账.search("2016-01-01", "2018-01-01", null, null, null);
-			
+
 		} catch (MyException e) {
 			logger.error("查询资产明细账失败！", e);
 			Reporter.log(e.getMessage());
@@ -664,13 +679,13 @@ public class TestScenery2 implements ILogUtil {
 		}
 
 	}
-	
+
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test资产与总账对账表() throws InterruptedException, MyException {
 		try {
 			mainPage.openFrame("资产与总账对账表");
 			资产与总账对账表.search("2016-01-01");
-			
+
 		} catch (MyException e) {
 			logger.error("查询资产与总账对账表失败！", e);
 			Reporter.log(e.getMessage());
@@ -679,13 +694,13 @@ public class TestScenery2 implements ILogUtil {
 		}
 
 	}
-	
+
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test资产折旧明细() throws InterruptedException, MyException {
 		try {
 			mainPage.openFrame("资产折旧明细");
 			资产折旧明细.search("2016-01", "2016-12", null, null, null);
-			
+
 		} catch (MyException e) {
 			logger.error("查询资产折旧明细失败！", e);
 			Reporter.log(e.getMessage());
@@ -694,13 +709,13 @@ public class TestScenery2 implements ILogUtil {
 		}
 
 	}
-	
+
 	@Test(dependsOnMethods = { "test期末处理" })
 	public void test资产总账() throws InterruptedException, MyException {
 		try {
 			mainPage.openFrame("资产总账");
 			资产总账.search("2016-01-01", "2018-01-01", null);
-			
+
 		} catch (MyException e) {
 			logger.error("查询资产总账失败！", e);
 			Reporter.log(e.getMessage());

@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Reporter;
 
 //import org.testng.Reporter;
 
@@ -18,21 +19,20 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	@Override
 	public void open() {
 		logger.info("打开页面：【" + page.getName() + "】");
+		Reporter.log("打开页面："+page.getUrl());
 		driver.get(page.getUrl());
 	}
 
 	@Override
 	public void quit() {
 		logger.info("关闭浏览器！");
+		Reporter.log("关闭浏览器!");
 		driver.quit();
 	}
 
 	@Override
 	public WebElement getWebElement(String elementName) throws MyException {
 		try {
-
-			// element =
-			// wait.until(ExpectedConditions.presenceOfElementLocated(by(getElement(elementName))));
 
 			WebElement webElement = driver.findElement(by(getElement(elementName)));
 
@@ -85,21 +85,15 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 
 	@Override
 	public List<WebElement> getWebElements(WebElement webElement, By locator) throws MyException {
-		List<WebElement> elementList = null;
-
 		try {
 
-			elementList = webElement.findElements(locator);
-
-			// highlightElementUtil.highlightElement(element);
+			return webElement.findElements(locator);
 
 		} catch (WebDriverException e) {
 			logger.error("元素未找到：" + locator);
 			// Reporter.log("元素未找到：" + locator);
 			throw new MyException("元素未找到：" + locator, e);
 		}
-
-		return elementList;
 	}
 
 	@Override
@@ -126,7 +120,7 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 			// wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			List<WebElement> elementList = driver.findElements(locator);
 
-			logger.info("【" + locator + "】 已找到！"+elementList.size()+"个元素");
+			logger.info("【" + locator + "】 已找到！" + elementList.size() + "个元素");
 
 			return elementList;
 		} catch (WebDriverException e) {
@@ -167,15 +161,16 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	@Override
 	public void input(String elementName, String string) throws MyException {
 		try {
+			Reporter.log(elementName + ":输入：" + string);
 			WebElement element = getWebElement(elementName);
-//			input(getWebElement(elementName),string);
-			
+
 			element.clear();
 			element.sendKeys(string);
 			logger.info("【" + elementName + "】 已输入：" + string);
+
 		} catch (WebDriverException e) {
 			logger.error("【" + elementName + "】 输入失败！");
-			// Reporter.log("【" + elementName + "】 输入失败！");
+			Reporter.log(elementName + ":输入：" + string + "失败！");
 			throw new MyException("【" + elementName + "】 输入失败！", e);
 		}
 	}
@@ -189,12 +184,11 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	@Override
 	public void input(String elementName, Keys key) throws MyException {
 		try {
-			WebElement element = getWebElement(elementName);
-			element.sendKeys(key);
-			// logger.info("【" + elementName + "】 已输入：" + );
+
+			getWebElement(elementName).sendKeys(key);
+
 		} catch (WebDriverException e) {
 			logger.error("【" + elementName + "】 输入失败！");
-			// Reporter.log("【" + elementName + "】 输入失败！");
 			throw new MyException("【" + elementName + "】 输入失败！", e);
 		}
 
@@ -203,6 +197,7 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	@Override
 	public void input(WebElement webElement, String inputText) throws MyException {
 		try {
+
 			webElement.clear();
 			webElement.sendKeys(inputText);
 
@@ -216,51 +211,50 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 	@Override
 	public void click(String elementName) throws MyException {
 		try {
-			
-			Thread.sleep(700);
-			
-			WebElement element = getWebElement(elementName);
 
-//			wait.until(ExpectedConditions.elementToBeClickable(element));
-			element = wait.until(ExpectedConditions.elementToBeClickable(by(page.getElement(elementName))));
+			Thread.sleep(700);
+
+			Reporter.log("点击：" + elementName);
+
+			wait.until(ExpectedConditions.elementToBeClickable(by(page.getElement(elementName)))).click();
 
 			// highlightElementUtil.highlightElement(element);
 
-			element.click();
-
 			Thread.sleep(500);
-//			click(getWebElement(elementName));
-			
+
 			logger.info("点击【" + elementName + "】");
 		} catch (WebDriverException e) {
 			logger.error("【" + elementName + "】点击失败！");
+			Reporter.log("点击：" + elementName + "失败！");
 			throw new MyException("【" + elementName + "】 点击失败！", e);
 
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		}
 	}
 
 	@Override
 	public void click(WebElement webElement) throws MyException {
 		try {
-			
-			Thread.sleep(1000);
-			
-			wait.until(ExpectedConditions.elementToBeClickable(webElement));
 
+			Thread.sleep(1000);
+
+			String elementText = webElement.getText();
+			if (elementText != null && !elementText.equals("")) {
+				
+				logger.info("点击【" + elementText.replaceAll("\n", "_") + "】");
+
+				Reporter.log("点击：" + elementText.replaceAll("\n", "_"));
+			}
+
+			wait.until(ExpectedConditions.elementToBeClickable(webElement)).click();
 
 			// highlightElementUtil.highlightElement(webElement);
-
-			logger.info("点击【" + webElement.getText().replaceAll("\n", "") + "】");
-			
-			webElement.click();
 
 		} catch (WebDriverException e) {
 
 			logger.error("【" + webElement.toString() + "】点击失败！");
-			// Reporter.log("【" + webElement.toString() + "】点击失败！");
+			 Reporter.log("【" + webElement.toString() + "】点击失败！");
 			throw new MyException("【" + webElement.toString() + "】点击失败！", e);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
@@ -352,7 +346,7 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 		boolean result = false;
 
 		try {
-			result  = getWebElement(locator).isDisplayed();
+			result = getWebElement(locator).isDisplayed();
 		} catch (WebDriverException e) {
 			// throw new MyException("元素未找到：" + locator, e);
 		}
@@ -360,6 +354,21 @@ public class Handler extends WebDriverModel implements IHandler, ILogUtil {
 		logger.info("【" + locator + "】 已显示：" + result);
 
 		return result;
+	}
+
+	@Override
+	public boolean isSelected(By locator) throws MyException {
+		return getWebElement(locator).isSelected();
+	}
+
+	@Override
+	public boolean isSelected(String elementName) throws MyException {
+		return getWebElement(elementName).isSelected();
+	}
+
+	@Override
+	public boolean isSelected(WebElement webElement) throws MyException {
+		return webElement.isSelected();
 	}
 
 	@Override

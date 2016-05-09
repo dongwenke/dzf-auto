@@ -64,13 +64,19 @@ public interface IHandler {
 	public boolean isElementExsit(By locator);
 
 	public boolean waitToDisplayed(WebElement webElement) throws MyException;
-	
+
 	public boolean waitToDisplayed(String elementName) throws MyException;
-	
+
 	public boolean waitToDisplayed(By locator) throws MyException;
 
 	WebElement getWebElement(WebElement webElement, By locator) throws MyException;
 
 	List<WebElement> getWebElements(WebElement webElement, By locator) throws MyException;
+
+	boolean isSelected(By locator) throws MyException;
+
+	boolean isSelected(WebElement webElement) throws MyException;
+
+	boolean isSelected(String elementName) throws MyException;
 
 }
